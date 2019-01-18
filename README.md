@@ -4,6 +4,8 @@ This project was created in affiliation with MIT Code4Good, an organization that
 
 For relevant people - Google API Key: AIzaSyDlg_RXppjqCe1dTW8XW2xBYgmq84-O-xQ
 
+Also, please only do pull requests on the changes branch, then we can commit them to master. It'll help keep the work progress clear and prevent code conflicts.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
