@@ -46,11 +46,45 @@
     </div>
   </div>
 
+      <div class="row">
+          <div class="col-md-12">
+              <div id="map"></div>
+          </div>
+      </div>
+
 </div>
 
  <script src="js/jquery.min.js"></script>
  <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+
+  <script src="papaparse.min.js"></script>
+  <script>
+      var csvFile = 'tweak.csv' //CSV file with farmer's market data
+      var data;
+      Papa.parse(csvFile, {
+          header: true,
+          download: true,
+          complete: function (results) {
+              console.log(results);
+              data = results.data;
+              console.log(data[0]['Market Name']); //Gets market name of the first farmer's market
+          }
+      });
+  </script>
+  <script>
+      function initMap() { //Creates map with a marker at Uluru
+          // The location of Uluru
+          var boston = {lat: 42.359884, lng: -71.058813};
+          // The map, centered at Uluru
+          var map = new google.maps.Map(
+              document.getElementById('map'), {zoom: 8, center: boston});
+          // The marker, positioned at Uluru
+          var marker = new google.maps.Marker({position: boston, map: map});
+      }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlg_RXppjqCe1dTW8XW2xBYgmq84-O-xQ&callback=initMap"
+          async defer></script>
 
   <!--leaflet library-->
   <script src="js/leaflet.js"></script>
