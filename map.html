@@ -38,12 +38,12 @@
     <script>
         function initMap() { //Creates map with a marker at Uluru
             // The location of Uluru
-            var uluru = {lat: -25.344, lng: 131.036};
+            var boston = {lat: 42.359884, lng: -71.058813};
             // The map, centered at Uluru
             var map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 4, center: uluru});
+                document.getElementById('map'), {zoom: 8, center: boston});
             // The marker, positioned at Uluru
-            var marker = new google.maps.Marker({position: uluru, map: map});
+            var marker = new google.maps.Marker({position: boston, map: map});
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlg_RXppjqCe1dTW8XW2xBYgmq84-O-xQ&callback=initMap"
