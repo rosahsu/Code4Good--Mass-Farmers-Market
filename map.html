@@ -19,31 +19,56 @@
     </style>
 </head>
 <body>
-    <div id="map"></div>
     <script src="papaparse.min.js"></script>
     <script>
-        var csvFile = 'tweak.csv' //CSV file with farmer's market data
-        var data;
-        Papa.parse(csvFile, {
-            header: true,
-            download: true,
-            complete: function (results) {
-                console.log(results);
-                data = results.data;
-                console.log(data[0]['Market Name']); //Gets market name of the first farmer's market
+        /**
+         * Filters out non-HIP markets
+         */
+        function filterHIP(){
+            for(var i = 0; i < data.length; i++){
+                if (data[i].HIP == 0){
+                    markers[i].setMap(null); //Makes marker disappear from map
+                }
             }
-        });
-    </script>
-    <script>
-        function initMap() { //Creates map with a marker at Uluru
-            // The location of Uluru
-            var boston = {lat: 42.359884, lng: -71.058813};
-            // The map, centered at Uluru
-            var map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 8, center: boston});
-            // The marker, positioned at Uluru
-            var marker = new google.maps.Marker({position: boston, map: map});
         }
+    </script>
+    <div id="button">
+        <!--Creates a button with HIP text-->
+        <button type="button" onClick="filterHIP()">HIP</button>
+    </div>
+    <div id="map"></div>
+    <script>
+        var data;
+        var markers = []; //Empty array
+
+        /**
+         * Initializes map with markers and data
+         */
+        function initMap() {
+            var csvFile = 'tweak.csv' //CSV  with farmer's market data
+            var boston = {lat: 42.359884, lng: -71.058813}; //Location of Boston
+            var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 8, center: boston}); //Creates map centered on Boston
+            Papa.parse(csvFile, { //Gets data from the CSV
+                header: true,
+                download: true,
+                dynamicTyping: true,
+                skipEmptyLines: true,
+                complete: function (results) {
+                    console.log(results);
+                    data = results.data;
+                    for (var i = 0;i < data.length;i++)
+                    {
+                        if(data[i].Latitude != 0 && data[i].Longitude != 0) {
+                            var location = {lat: data[i].Latitude, lng: data[i].Longitude}; //Gets location of each farmer's market
+                            var marker = new google.maps.Marker({position: location, map: map}) //Creates a marker and places it on the map
+                            markers.push(marker); //Stores marker in array
+                        }
+                    }
+                }
+            });
+        }
+
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlg_RXppjqCe1dTW8XW2xBYgmq84-O-xQ&callback=initMap"
         async defer></script>
