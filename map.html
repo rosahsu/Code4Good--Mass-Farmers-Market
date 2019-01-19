@@ -40,6 +40,7 @@
     <script>
         var data;
         var markers = []; //Empty array
+        var infowindows = [];
 
         /**
          * Initializes map with markers and data
@@ -57,16 +58,32 @@
                 complete: function (results) {
                     console.log(results);
                     data = results.data;
-                    for (var i = 0;i < data.length;i++)
-                    {
-                        if(data[i].Latitude != 0 && data[i].Longitude != 0) {
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].Latitude != 0 && data[i].Longitude != 0) {
                             var location = {lat: data[i].Latitude, lng: data[i].Longitude}; //Gets location of each farmer's market
                             var marker = new google.maps.Marker({position: location, map: map}) //Creates a marker and places it on the map
-                            markers.push(marker); //Stores marker in array
+                            markers.push(marker);
+                            //Stores marker in array
+                            //creating info pop up windows for each marker
+                            //more info needs to be added later in content string
+                                //eg snap, hip, hours, days
+                                //content string ideally would be in html to accomodate this
+
+                            var contentString = data[i]["Market Name"]
+                            var infowindow = new google.maps.InfoWindow ({
+                                content : contentString
+                            });
+                            marker.infowindow = infowindow;
+                            marker.addListener('click',function() {
+                                return this.infowindow.open(map,this);
+                            })
+                            infowindows.push(infowindow);
                         }
+
                     }
+
                 }
-            });
+            })
         }
 
     </script>
