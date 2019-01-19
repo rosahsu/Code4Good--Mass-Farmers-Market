@@ -31,12 +31,26 @@
                 }
             }
         }
+
+        function filterSNAP() {
+            for(var i = 0 ; i < data.length; i++) {
+                if (data[i]["SNAP/EBT"] == 0) {
+                    markers[i].setMap(null);
+                }
+            }
+        }
     </script>
     <div id="button">
         <!--Creates a button with HIP text-->
         <button type="button" onClick="filterHIP()">HIP</button>
+        <button type="button" onClick="filterSNAP()">SNAP</button>
     </div>
     <div id="map"></div>
+
+    <div id="button2">
+        <button type="button" onClick="filterSNAP()">SNAP</button>
+    </div>
+
     <script>
         var data;
         var markers = []; //Empty array
