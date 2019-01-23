@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Map</title>
+    <title>Mass Farmers Market Association Map</title>
     <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <style>
-        /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
-        #map {
-            height: 100%;
-        }
-        /* Optional: Makes the sample page fill the window. */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
+    <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/leaflet.css">
+
 </head>
 <body>
+
+  <div class="container">
+    <h1>Massachusetts Farmers Market Alliance
+        <span class="divider">|</span>
+        <span class="sub-headline">
+          <span id="station-count"></span> Market Locations
+        </span>
+      </h1>
+    <div class="row align-items-center">
+      <div class="col-md-12">
+        <div class="btn-group" role="group" aria-label="Coupons">
+          <button type="button" class="btn btn-secondary" id="snap">SNAP</button>
+          <button type="button" class="btn btn-secondary" id="hip">HIP</button>
+          <button type="button" class="btn btn-secondary" id= "snapMatch">SNAP Match</button>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="btn-group" role="group" aria-label="Products">
+          <button type="button" class="btn btn-secondary" id="dairy">Dairy</button>
+          <button type="button" class="btn btn-secondary" id="bakedGoods">Baked Goods</button>
+          <button type="button" class="btn btn-secondary" id= "produce"><i class="fas fa-carrot"></i>&nbsp Produce</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+ 
     <script src="papaparse.min.js"></script>
     <script>
         /**
