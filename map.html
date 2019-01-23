@@ -25,7 +25,7 @@
         <div class="btn-group" role="group" aria-label="Coupons">
           <button type="button" class="btn btn-secondary" id="snap" onClick="filterSNAP()">SNAP</button>
           <button type="button" class="btn btn-secondary" id="hip"  onClick="filterHIP()">HIP</button>
-          <button type="button" class="btn btn-secondary" id= "snapMatch">SNAP Match</button>
+          <button type="button" class="btn btn-secondary" id= "snapMatch" onClick="filterHIP()">SNAP Match</button>
         </div>
       </div>
       <div class="col-md-12">
@@ -60,6 +60,14 @@
                 }
             }
         }
+
+        function filterSNAPMatch() {
+            for(var i = 0 ; i < data.length; i++) {
+                if (data[i]["SNAP MATCH"] == 0) {
+                    markers[i].setMap(null);
+                }
+            }
+        }
     </script>
 
 
@@ -78,6 +86,7 @@
 
         function initMap() {
             var csvFile = 'tweak.csv' //CSV  with farmer's market data
+            console.log(csvFile);
             var boston = {lat: 42.359884, lng: -71.058813}; //Location of Boston
             var map = new google.maps.Map(
                 document.getElementById('map'), {zoom: 8, center: boston}); //Creates map centered on Boston
