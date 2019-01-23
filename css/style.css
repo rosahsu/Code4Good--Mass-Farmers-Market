@@ -24,16 +24,19 @@ h1 .sub-headline {
 }
 
 
-#map-area {
-    width: 100%;
-    height: 600px;
+#maprow {
+    text-align: center;
 }
 
 
     /* Always set the map height explicitly to define the size of the div
      * element that contains the map. */
     #map {
-        height: 100%;
+        width: 90%;
+        height: 600px;
+
+        display: inline-block;
+
     }
     /* Optional: Makes the sample page fill the window. */
     html, body {
