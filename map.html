@@ -91,6 +91,7 @@
                             var close_time = data[i]["Close"];
                             var start_date = data[i]["Start Date"];
                             var end_date = data[i]["End Date"];
+                            //var url = generate_map_url(data[i]["Address"]);
 
                             var contentString =  '<b>' + name + '</b>' +
                                                 '<p><u>Dates:</u> ' + start_date + "-" + end_date + '</p>' +
@@ -102,8 +103,12 @@
                                 content : contentString
                             });
                             marker.infowindow = infowindow;
-                            google.maps.event.addListener(marker,'click',function(e) {
-                                this.infowindow.open(map,this);
+                            google.maps.event.addListener(marker,'mouseover',function() {
+                                infowindow.open(map,this);
+
+
+                            });
+                            google.maps.event.addListener(marker,'mouseout',function() {
                                 infowindow.close();
                             });
                             infowindows.push(infowindow);
