@@ -117,7 +117,9 @@
                           marker.infowindow = infowindow;
                           google.maps.event.addListener(marker,'click',function(e) {
                               this.infowindow.open(map,this);
-                              infowindow.close();
+                          });
+                          google.maps.event.addListener(marker,'mouseout',function() {
+                              infowindow.close()
                           });
                           infowindows.push(infowindow);
                       }
