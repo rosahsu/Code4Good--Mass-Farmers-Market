@@ -23,8 +23,8 @@
     <div class="row align-items-center">
       <div class="col-md-12">
         <div class="btn-group" role="group" aria-label="Coupons">
-          <button type="button" class="btn btn-secondary" id="snap">SNAP</button>
-          <button type="button" class="btn btn-secondary" id="hip">HIP</button>
+          <button type="button" class="btn btn-secondary" id="snap" onClick="filterSNAP()">SNAP</button>
+          <button type="button" class="btn btn-secondary" id="hip"  onClick="filterHIP()">HIP</button>
           <button type="button" class="btn btn-secondary" id= "snapMatch">SNAP Match</button>
         </div>
       </div>
@@ -38,10 +38,8 @@
     </div>
 </div>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
- <script src="js/bootstrap.min.js"></script>
- 
+
+
     <script src="papaparse.min.js"></script>
     <script>
         /**
@@ -63,18 +61,11 @@
             }
         }
     </script>
-    <div id="buttons">
-        <!--Creates a button with HIP text-->
 
-        <input id="HIP" type="checkbox" name = "HIP"
-               onClick="filterHIP()">HIP</input>
-        <p><input id="SPAN" type="checkbox" onClick="filterSNAP()">SNAP</input></p>
-    </div>
+
     <div id="map"></div>
 
-    <div id="button2">
-        <button type="button" onClick="filterSNAP()">SNAP</button>
-    </div>
+
 
     <script>
         var data;
