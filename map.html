@@ -9,144 +9,185 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="css/dropdownbtn.css">
 
 </head>
 <body>
 
-  <div class="container">
+<div class="container">
     <h1>Massachusetts Farmers Market Alliance
         <span class="divider">|</span>
         <span class="sub-headline">
           <span id="station-count"></span> Market Locations
         </span>
-      </h1>
+    </h1>
     <div class="row align-items-center">
-      <div class="col-md-12">
-        <div class="btn-group" role="group" aria-label="Coupons">
-          <input type="checkbox" class="btn btn-secondary" id="SNAP/EBT" onchange=filter(this)>SNAP/EBT</input> <!--Button ID = name of attribute that button filters out-->
-          <input type="checkbox" class="btn btn-secondary" id="HIP"  onchange=filter(this)>HIP</input>
-          <input type="checkbox" class="btn btn-secondary" id= "SNAP MATCH" onchange=filter(this)>SNAP Match</input>
-            <!--Format for a new Button:
-            <input type="checkbox" class="btn btn-secondary" id="name of attribute column" onchange=filter(this)>Button Text</input>
-            -->
+        <div class="col-md-12">
+            <div class="btn-group" role="group" aria-label="Coupons">
+                <input type="checkbox" class="btn btn-secondary" id="SNAP/EBT" onchange=filter(this)>SNAP/EBT</input> <!--Button ID = name of attribute that button filters out-->
+                <input type="checkbox" class="btn btn-secondary" id="HIP"  onchange=filter(this)>HIP</input>
+                <input type="checkbox" class="btn btn-secondary" id= "SNAP MATCH" onchange=filter(this)>SNAP Match</input>
+                <div class="dropdown">
+                    <button class="dropbtn">Dropdown</button>
+                    <div class="dropdown-content">
+                        <a onclick=resetMarkers()>Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+                <!--Format for a new Button:
+                <input type="checkbox" class="btn btn-secondary" id="name of attribute column" onchange=filter(this)>Button Text</input>
+                -->
+            </div>
+
         </div>
-      </div>
-      <div class="col-md-12">
-        <div class="btn-group" role="group" aria-label="Products">
-          <button type="checkbox" class="btn btn-secondary" id="dairy" onchange=filter(this)>Dairy</button>
-          <button type="checkbox" class="btn btn-secondary" id="bakedGoods">Baked Goods</button>
-          <button type="checkbox" class="btn btn-secondary" id= "produce"><i class="fas fa-carrot"></i>&nbsp Produce</button>
+        <div class="col-md-12">
+            <div class="btn-group" role="group" aria-label="Products">
+                <button type="checkbox" class="btn btn-secondary" id="dairy" onchange=filter(this)>Dairy</button>
+                <button type="checkbox" class="btn btn-secondary" id="bakedGoods">Baked Goods</button>
+                <button type="checkbox" class="btn btn-secondary" id= "produce"><i class="fas fa-carrot"></i>&nbsp Produce</button>
+            </div>
         </div>
-      </div>
     </div>
     <div class="row align-items-center maprow">
-      <div class="col-md-12">
-        <div id="map"></div>
-      </div>
+        <div class="col-md-12">
+            <div id="map"></div>
+        </div>
     </div>
 </div>
 
 
 
-    <script src="papaparse.min.js"></script>
-    <script>
-        /**
-         * Filters out selected attributes
-         */
-        function filter(button){
-            if (document.getElementById(button.id).checked == false){
-                resetMarkers()
-            } else {
-                for(var i = 0; i < data.length; i++){
-                    if(data[i][button.id] == 0) {
-                        markers[i].setMap(null);
-                    }
+<script src="papaparse.min.js"></script>
+<script>
+    function getDistance(lat1, lon1, lat2, lon2, unit) {
+        if ((lat1 == lat2) && (lon1 == lon2)) {
+            return 0;
+        }
+        else {
+            var radlat1 = Math.PI * lat1/180;
+            var radlat2 = Math.PI * lat2/180;
+            var theta = lon1-lon2;
+            var radtheta = Math.PI * theta/180;
+            var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+            if (dist > 1) {
+                dist = 1;
+            }
+            dist = Math.acos(dist);
+            dist = dist * 180/Math.PI;
+            dist = dist * 60 * 1.1515;
+            if (unit=="K") { dist = dist * 1.609344 }
+            if (unit=="N") { dist = dist * 0.8684 }
+            return dist;
+        }
+    }
+
+    /**
+     * Filters out markers outside a certain radius (in mi)
+     * userLat: latitude of user
+     * userLon: longitude of user
+     * radius: radius of to filter (in mi)
+     */
+    function distanceFilter(userLat, userLon, radius){
+        
+    }
+    /**
+     * Filters out selected attributes
+     */
+    function filter(button){
+        if (document.getElementById(button.id).checked == false){
+            resetMarkers()
+        } else {
+            for(var i = 0; i < data.length; i++){
+                if(data[i][button.id] == 0) {
+                    markers[i].setMap(null);
                 }
             }
         }
-        function resetMarkers(){
-            for(var i = 0; i < markers.length; i++){
-                markers[i].setMap(map)
-            }
+    }
+    function resetMarkers(){
+        for(var i = 0; i < markers.length; i++){
+            markers[i].setMap(map)
         }
-    </script>
+    }
+</script>
 
 
 
 
 
 
-    <script>
-        var data;
-        var markers = []; //Empty array
-        var infowindows = [];
-        var map;
-        /**
-         * Initializes map with markers and data
-         */
+<script>
+    var data;
+    var markers = []; //Empty array
+    var infowindows = [];
+    var map;
+    /**
+     * Initializes map with markers and data
+     */
 
-        function initMap() {
-            var csvFile = 'tweak.csv' //CSV  with farmer's market data
-            console.log(csvFile);
-            var boston = {lat: 42.359884, lng: -71.058813}; //Location of Boston
-            map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 8, center: boston}); //Creates map centered on Boston
-            Papa.parse(csvFile, { //Gets data from the CSV
-                header: true,
-                download: true,
-                dynamicTyping: true,
-                skipEmptyLines: true,
-                complete: function (results) {
-                    console.log(results);
-                    data = results.data;
-
-
-                    for (var i = 0; i < data.length; i++) {
-                        if (data[i].Latitude != 0 && data[i].Longitude != 0) {
-                            var location = {lat: data[i].Latitude, lng: data[i].Longitude}; //Gets location of each farmer's market
-                            var marker = new google.maps.Marker({position: location, map: map}) //Creates a marker and places it on the map
-                            markers.push(marker);
-                            //Stores marker in array
-
-                            //info for creating info-window for each marker
-                            var name = data[i]["Market Name"];
-                            var days = data[i]["Days of Week"];
-                            var open_time = data[i]["Open"];
-                            var close_time = data[i]["Close"];
-                            var start_date = data[i]["Start Date"];
-                            var end_date = data[i]["End Date"];
-                            //var url = generate_map_url(data[i]["Address"]);
-
-                            var contentString =  '<b>' + name + '</b>' +
-                                                '<p><u>Dates:</u> ' + start_date + "-" + end_date + '</p>' +
-                                                '<p><u>Hours:</u> ' + open_time + "-" + close_time + '</p>' +
-                                                '<p><u>Days Open:</u> ' + days + '</p>'
-                                                ;
-
-                            var infowindow = new google.maps.InfoWindow ({
-                                content : contentString
-                            });
-                            marker.infowindow = infowindow;
-                            google.maps.event.addListener(marker,'mouseover',function() {
-                                this.infowindow.open(map,this);
+    function initMap() {
+        var csvFile = 'tweak.csv' //CSV  with farmer's market data
+        console.log(csvFile);
+        var boston = {lat: 42.359884, lng: -71.058813}; //Location of Boston
+        map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 8, center: boston}); //Creates map centered on Boston
+        Papa.parse(csvFile, { //Gets data from the CSV
+            header: true,
+            download: true,
+            dynamicTyping: true,
+            skipEmptyLines: true,
+            complete: function (results) {
+                console.log(results);
+                data = results.data;
 
 
-                            });
-                            google.maps.event.addListener(marker,'mouseout',function() {
-                                this.infowindow.close();
-                            });
-                            infowindows.push(infowindow);
-                        }
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].Latitude != 0 && data[i].Longitude != 0) {
+                        var location = {lat: data[i].Latitude, lng: data[i].Longitude}; //Gets location of each farmer's market
+                        var marker = new google.maps.Marker({position: location, map: map}) //Creates a marker and places it on the map
+                        markers.push(marker);
+                        //Stores marker in array
 
+                        //info for creating info-window for each marker
+                        var name = data[i]["Market Name"];
+                        var days = data[i]["Days of Week"];
+                        var open_time = data[i]["Open"];
+                        var close_time = data[i]["Close"];
+                        var start_date = data[i]["Start Date"];
+                        var end_date = data[i]["End Date"];
+                        //var url = generate_map_url(data[i]["Address"]);
+
+                        var contentString =  '<b>' + name + '</b>' +
+                            '<p><u>Dates:</u> ' + start_date + "-" + end_date + '</p>' +
+                            '<p><u>Hours:</u> ' + open_time + "-" + close_time + '</p>' +
+                            '<p><u>Days Open:</u> ' + days + '</p>'
+                        ;
+
+                        var infowindow = new google.maps.InfoWindow ({
+                            content : contentString
+                        });
+                        marker.infowindow = infowindow;
+                        google.maps.event.addListener(marker,'mouseover',function() {
+                            this.infowindow.open(map,this);
+
+
+                        });
+                        google.maps.event.addListener(marker,'mouseout',function() {
+                            this.infowindow.close();
+                        });
+                        infowindows.push(infowindow);
                     }
 
                 }
 
-            })
-        }
+            }
 
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlg_RXppjqCe1dTW8XW2xBYgmq84-O-xQ&callback=initMap"
+        })
+    }
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlg_RXppjqCe1dTW8XW2xBYgmq84-O-xQ&callback=initMap"
         async defer></script>
 </body>
 </html>
