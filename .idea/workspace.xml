@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51e11ad4-f6dc-46eb-8af7-07f1c9f3d278" name="Default" comment="fixed issue where franklin farmers market appears for every marker">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/map.html" afterDir="false" />
-    </list>
+    <list default="true" id="51e11ad4-f6dc-46eb-8af7-07f1c9f3d278" name="Default" comment="fixed issue where franklin farmers market appears for every marker when hovered over" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
+            <state relative-caret-position="306">
+              <caret line="144" column="21" lean-forward="true" selection-start-line="144" selection-start-column="21" selection-end-line="144" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -54,15 +50,6 @@
           <provider selected="true" editor-type-id="csv-text-editor">
             <state relative-caret-position="442">
               <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="119" selection-start-line="119" selection-end-line="119" />
             </state>
           </provider>
         </entry>
@@ -225,7 +212,7 @@
       <workItem from="1547999854861" duration="6912000" />
       <workItem from="1548022380970" duration="1070000" />
       <workItem from="1548104508540" duration="1805000" />
-      <workItem from="1548275010812" duration="5515000" />
+      <workItem from="1548275010812" duration="6226000" />
     </task>
     <task id="LOCAL-00001" summary="Created info windows for each marker. &#10;TO DO:&#10;- only make one open at a time&#10;- input more info like hours, days open, SNAP, SNAP MATCH, EBT">
       <created>1547870664982</created>
@@ -255,15 +242,21 @@
       <option name="project" value="LOCAL" />
       <updated>1548279445588</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed issue where franklin farmers market appears for every marker when hovered over">
+      <created>1548284736895</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1548284736895</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35843000" />
+    <option name="totallyTimeSpent" value="36554000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="709" y="0" width="725" height="1006" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49744463" weight="0.7946027" />
       <window_info id="Structure" order="1" sideWeight="0.5025554" side_tool="true" weight="0.3838081" />
@@ -376,7 +369,8 @@
     <MESSAGE value="added SNAP button; looking into dropdown list filters to fit more of Rosa's requests" />
     <MESSAGE value="Added more info to info-window&#10;Need help putting in directions link&#10;changed buttons to check-boxes --&gt; will be put in drop down list later on" />
     <MESSAGE value="added mouseover and mouseout functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="added mouseover and mouseout functionality" />
+    <MESSAGE value="fixed issue where franklin farmers market appears for every marker when hovered over" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed issue where franklin farmers market appears for every marker when hovered over" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
@@ -459,21 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tweak.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/mapVis.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-153">
@@ -490,17 +469,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="119" selection-start-line="119" selection-end-line="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tweak.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="144" column="21" lean-forward="true" selection-start-line="144" selection-start-column="21" selection-end-line="144" selection-end-column="21" />
         </state>
       </provider>
     </entry>
