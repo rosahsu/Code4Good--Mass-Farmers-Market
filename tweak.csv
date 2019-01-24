@@ -2,7 +2,7 @@ Market Name,Address,Start Date,End Date,Days of Week,Open,Close,SNAP/EBT,SNAP MA
 Acton-Boxborough Farmers Market,"10-12 Pearl St, Acton, MA 01720",6/10/2018,10/21/2018,Sunday,10:00 AM,1:00 PM,1,1,0,42.475238,-71.473694
 Arlington Farmers Market,"Russell Common Parking Lot, Winslow St @ Mystic St., Arlington, Ma",6/13/2018,10/31/2018,Wednesday,2:00 PM,6:30 PM,0,0,0,42.415969,-71.151248
 Ashfield Farmers Market,"Town Common, Main St. Ashfield, MA 01330",5/12/2018,10/27/2018,Saturday,9:00 AM,1:00 PM,1,0,1,42.525876,-72.790707
-Ashland Farmers Market,125 Front St,6/9/2018,10/6/2018,Saturday,9:00 AM,1:00 PM,1,1,1,0,0
+Ashland Farmers Market,125 Front St,6/9/2018,10/6/2018,Saturday,9:00 AM,1:00 PM,1,1,1,42.260281,-71.462455
 Ashmont Farmers Market,"1900 Dorchester Ave. Dorchester, MA 02124",6/29/2018,10/19/2018,Friday,3:00 PM,7:00 PM,1,0,1,42.284725,-71.064504
 Barre Farmers Market,"Barre Common Barre, MA 01005",5/12/2018,10/20/2018,Saturday,9:00 AM,12:00 PM,1,0,0,0,0
 Belchertown Farmers and Artisans Market,Belchertown Town Common,6/3/2018,10/7/2018,Sunday,10:00 AM,2:00 PM,1,0,1,42.279639,-72.402381
@@ -59,7 +59,7 @@ Sterling Farmers Market,"1 Park St, Sterling MA 01564",5/18/2018,11/1/2018,Frida
 Swansea Farmers Market @ Stony Creek Farm,"1210 Wilbur Ave, Swansea, Ma 02777",6/3/2018,12/2/2018,Sunday,10:00 AM,2:00 PM,1,0,0,0,0
 Wakefield Farmers Market,"Hall Park North Ave, Wakefield MA 01880",6/16/2018,10/13/2018,Saturday,9:00 AM,1:00 PM,1,1,1,0,0
 Waltham Farmers Market,"119 School Street, Waltham MA",6/9/2018,11/3/2018,Saturday,9:30 AM,2:00 PM,1,1,1,0,0
-West Brookfield Farmers Market,"West Brookfield Town Common, Junction of Rt. 67 and Rt. 9",6/6/2018,10/10/2018,Wednesday,3:00 PM,6:00 PM,1,0,1,0,0
-Williamstown Farmers Market,"Spring Street Parking Lot, Williamstown, MA",5/19/2018,10/13/2018,Saturday,9:00 AM,1:00 PM,0,0,0,0,0
-Wilmington Farmers Market,"140 Middlesex Avenue, Wilmington, MA 0188",6/10/2018,10/29/2017,Sunday,10:00 AM,1:00 PM,1,,1,0,0
-Winchester Farmers Market,"Laraway Road, Winchester, MA 01890",6/9/2018,10/27/2018,Saturday,9:30 AM,1:30 PM,1,1,1,0,0
+West Brookfield Farmers Market,"West Brookfield Town Common, Junction of Rt. 67 and Rt. 9",6/6/2018,10/10/2018,Wednesday,3:00 PM,6:00 PM,1,0,1,42.236622,-72.138092
+Williamstown Farmers Market,"Spring Street Parking Lot, Williamstown, MA",5/19/2018,10/13/2018,Saturday,9:00 AM,1:00 PM,0,0,0,39.695311,-74.999871
+Wilmington Farmers Market,"140 Middlesex Avenue, Wilmington, MA 0188",6/10/2018,10/29/2017,Sunday,10:00 AM,1:00 PM,1,,1,42.557608,-71.16431
+Winchester Farmers Market,"Laraway Road, Winchester, MA 01890",6/9/2018,10/27/2018,Saturday,9:30 AM,1:30 PM,1,1,1,42.452363,-71.138046
