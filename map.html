@@ -28,35 +28,42 @@
     </div>
     <h2>   What services are you looking for? </h2>
     <div class="row align-items-center">
+<<<<<<< HEAD
             <div class="btn-group snap_toggles" role="group" aria-label="Coupons">
             <!--    <input type="checkbox" class="btn btn-secondary" id="SNAP/EBT" onchange=filter(this)>SNAP/EBT</input> <!--Button ID = name of attribute that button filters out-->
 
               <div class="col-md-12">
+=======
+        <div class="btn-group snap_toggles" role="group" aria-label="Coupons">
+            <div class="col-md-12">
+>>>>>>> 450e722c1f0967b623c97671b34073c29f197a18
                 <div class="center">
-                  <input type="checkbox" id="SNAPEBT" class="toggle_button" onchange=filter(this) style="display:none"/>
-                  <label for="SNAPEBT" class="toggle"><span></span>SNAP</label>
+                    <input type="checkbox" id="SNAPEBT" class="toggle_button" onchange=filter(this) style="display:none"/>
+                    <label for="SNAPEBT" class="toggle"><span></span>SNAP</label>
                 </div>
-              </div>
-
-                <div class="col-md-12">
-                <div class="center">
-                  <input type="checkbox" id="HIP" class="toggle_button" onchange=filter(this) style="display:none"/>
-                  <label for="HIP" class="toggle"><span></span>HIP</label>
-                </div>
-              </div>
-
-              <div class="col-md-12">
-                <div class="center">
-                  <input type="checkbox" id="SNAPMATCH" class="toggle_button" onchange=filter(this) style="display:none"/>
-                  <label for="SNAPMATCH" class="toggle"><span></span>SNAP Match</label>
-                </div>
-              </div>
-                <!--Format for a new Button:
-                <input type="checkbox" class="btn btn-secondary" id="name of attribute column" onchange=filter(this)>Button Text</input>
-                -->
             </div>
-        </div>
 
+            <div class="col-md-12">
+                <div class="center">
+                    <input type="checkbox" id="HIP" class="toggle_button" onchange=filter(this) style="display:none"/>
+                    <label for="HIP" class="toggle"><span></span>HIP</label>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="center">
+                    <input type="checkbox" id="SNAPMATCH" class="toggle_button" onchange=filter(this) style="display:none"/>
+                    <label for="SNAPMATCH" class="toggle"><span></span>SNAP Match</label>
+                </div>
+            </div>
+            <!--Format for a new Button:
+            <input type="checkbox" class="btn btn-secondary" id="name of attribute column" onchange=filter(this)>Button Text</input>
+            -->
+        </div>
+    </div>
+</div>
+
+<<<<<<< HEAD
   <h2>   What days of the week do you want to go? </h2>
         <div class="row align-items-center">
                 <div class="btn-group days_toggles" role="group" aria-label="Coupons">
@@ -113,35 +120,88 @@
                     <input type="checkbox" class="btn btn-secondary" id="name of attribute column" onchange=filter(this)>Button Text</input>
                     -->
                 </div>
-            </div>
+=======
 
-      <div class="row align-items-center">
+<div class="row align-items-center">
+    <div class="btn-group days_toggles" role="group" aria-label="Coupons">
         <div class="col-md-12">
-        <div class="dropdown">
-            <button class="dropbtn">Dropdown</button>
-            <div class="dropdown-content">
-                <a onclick=resetMarkers()>Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+            <div class="center">
+                <input type="checkbox" id="Monday" class="toggle_button" onchange=filter(this) style="display:none"/>
+                <label for="Monday" class="toggle"><span></span>Monday</label>
+>>>>>>> 450e722c1f0967b623c97671b34073c29f197a18
             </div>
         </div>
-      </div>
 
-<!-- unused buttons
         <div class="col-md-12">
-            <div class="btn-group" role="group" aria-label="Products">
-                <button type="checkbox" class="btn btn-secondary" id="dairy" onchange=filter(this)>Dairy</button>
-                <button type="checkbox" class="btn btn-secondary" id="bakedGoods">Baked Goods</button>
-                <button type="checkbox" class="btn btn-secondary" id= "produce"><i class="fas fa-carrot"></i>&nbsp Produce</button>
+            <div class="center">
+                <input type="checkbox" id="Tuesday" class="toggle_button" onchange=filter(this) style="display:none"/>
+                <label for="Tuesday" class="toggle"><span></span>Tuesday</label>
             </div>
-        </div> -->
-    </div>
-    <div class="row align-items-center maprow">
+        </div>
+
         <div class="col-md-12">
-            <div id="map"></div>
+            <div class="center">
+                <input type="checkbox" id="Wednesday" class="toggle_button" onchange=filter(this) style="display:none"/>
+                <label for="Wednesday" class="toggle"><span></span>Wednesday</label>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="center">
+                <input type="checkbox" id="Thursday" class="toggle_button" onchange=filter(this) style="display:none"/>
+                <label for="Thursday" class="toggle"><span></span>Thursday</label>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="center">
+                <input type="checkbox" id="Friday" class="toggle_button" onchange=filter(this) style="display:none"/>
+                <label for="Friday" class="toggle"><span></span>Friday</label>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="center">
+                <input type="checkbox" id="Saturday" class="toggle_button" onchange=filter(this) style="display:none"/>
+                <label for="Saturday" class="toggle"><span></span>Saturday</label>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="center">
+                <input type="checkbox" id="Sunday" class="toggle_button" onchange=filter(this) style="display:none"/>
+                <label for="Sunday" class="toggle"><span></span>Sunday</label>
+            </div>
         </div>
     </div>
 </div>
+
+<div class="row align-items-center">
+    <div class="col-md-12">
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+                <a onclick=resetMarkers()>All</a>
+                <a onclick=distanceFilter(userLocation,1,this)>1 mi</a>
+                <a onclick=distanceFilter(userLocation,2,this)>2 mi</a>
+                <a onclick=distanceFilter(userLocation,200,this)>5 mi</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- unused buttons
+            <div class="col-md-12">
+                <div class="btn-group" role="group" aria-label="Products">
+                    <button type="checkbox" class="btn btn-secondary" id="dairy" onchange=filter(this)>Dairy</button>
+                    <button type="checkbox" class="btn btn-secondary" id="bakedGoods">Baked Goods</button>
+                    <button type="checkbox" class="btn btn-secondary" id= "produce"><i class="fas fa-carrot"></i>&nbsp Produce</button>
+                </div>
+            </div> -->
+</div>
+<div class="row align-items-center maprow">
+    <div class="col-md-12">
+        <div id="map"></div>
+    </div>
 </div>
 
 
@@ -176,8 +236,15 @@
      * userLon: longitude of user
      * radius: radius of to filter (in mi)
      */
-    function distanceFilter(userLat, userLon, radius){
-
+    function distanceFilter(location, radius, selector){
+        console.log(selector);
+        for (var i = 0; i < markers.length; i++){
+            if(getDistance(location.lat, location.lng, data[i].Longitude, data[i].Latitude) > radius){
+                console.log(data[i]["Market Name"]);
+                console.log(getDistance(location.lat, location.lng, data[i].Longitude, data[i].Latitude, "K"))
+                markers[i].setMap(null);
+            }
+        }
     }
     /**
      * Filters out selected attributes
@@ -210,14 +277,25 @@
     var markers = []; //Empty array
     var infowindows = [];
     var map;
+    var userLocation;
     /**
      * Initializes map with markers and data
      */
 
     function initMap() {
         var csvFile = 'tweak.csv' //CSV  with farmer's market data
-
         console.log(csvFile);
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                userLocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                console.log(userLocation)
+            });
+        } else {
+            console.log("No location available.");
+        }
         var boston = {lat: 42.359884, lng: -71.058813}; //Location of Boston
         map = new google.maps.Map(
             document.getElementById('map'), {zoom: 8, center: boston}); //Creates map centered on Boston
@@ -227,7 +305,6 @@
             dynamicTyping: true,
             skipEmptyLines: true,
             complete: function (results) {
-                console.log(results);
                 data = results.data;
 
 
@@ -274,6 +351,7 @@
 
         })
     }
+    console.log(markers);
 
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlg_RXppjqCe1dTW8XW2xBYgmq84-O-xQ&callback=initMap"
