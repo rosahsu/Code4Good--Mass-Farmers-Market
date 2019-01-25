@@ -112,9 +112,9 @@
         <div class="dropdown">
             <button class="dropbtn">Dropdown</button>
             <div class="dropdown-content">
-                <a onclick=resetMarkers()>Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a onclick=distanceFilter(userLocation, 1)>1 mi</a>
+                <a onclick=distanceFilter(userLocation, 2)>2 mi</a>
+                <a onclick=distanceFilter(userLocation, 5)>5 mi</a>
             </div>
         </div>
       </div>
@@ -168,8 +168,12 @@
      * userLon: longitude of user
      * radius: radius of to filter (in mi)
      */
-    function distanceFilter(userLat, userLon, radius){
-
+    function distanceFilter(location, radius){
+        for (var i = 0; i < markers.length; i++){
+            if(getDistance(location.lat, location.lng, markers[i].position.lat, markers[i].position.lng) > radius){
+                markers[i].setMap(null);
+            }
+        }
     }
     /**
      * Filters out selected attributes
@@ -202,6 +206,7 @@
     var markers = []; //Empty array
     var infowindows = [];
     var map;
+    var userLocation;
     /**
      * Initializes map with markers and data
      */
@@ -210,6 +215,17 @@
         var csvFile = 'tweak.csv' //CSV  with farmer's market data
 
         console.log(csvFile);
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                userLocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                console.log(userLocation)
+            });
+        } else {
+            console.log("No location available.");
+        }
         var boston = {lat: 42.359884, lng: -71.058813}; //Location of Boston
         map = new google.maps.Map(
             document.getElementById('map'), {zoom: 8, center: boston}); //Creates map centered on Boston
