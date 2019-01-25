@@ -50,6 +50,7 @@
                 -->
             </div>
         </div>
+
       <div class="row align-items-center">
         <div class="col-md-12">
         <div class="dropdown">
@@ -62,14 +63,14 @@
         </div>
       </div>
 
-
+<!-- unused buttons
         <div class="col-md-12">
             <div class="btn-group" role="group" aria-label="Products">
                 <button type="checkbox" class="btn btn-secondary" id="dairy" onchange=filter(this)>Dairy</button>
                 <button type="checkbox" class="btn btn-secondary" id="bakedGoods">Baked Goods</button>
                 <button type="checkbox" class="btn btn-secondary" id= "produce"><i class="fas fa-carrot"></i>&nbsp Produce</button>
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="row align-items-center maprow">
         <div class="col-md-12">
@@ -151,6 +152,7 @@
 
     function initMap() {
         var csvFile = 'tweak.csv' //CSV  with farmer's market data
+
         console.log(csvFile);
         var boston = {lat: 42.359884, lng: -71.058813}; //Location of Boston
         map = new google.maps.Map(
