@@ -27,20 +27,24 @@
                 <input type="checkbox" class="btn btn-secondary" id="SNAP/EBT" onchange=filter(this)>SNAP/EBT</input> <!--Button ID = name of attribute that button filters out-->
                 <input type="checkbox" class="btn btn-secondary" id="HIP"  onchange=filter(this)>HIP</input>
                 <input type="checkbox" class="btn btn-secondary" id= "SNAP MATCH" onchange=filter(this)>SNAP Match</input>
-                <div class="dropdown">
-                    <button class="dropbtn">Dropdown</button>
-                    <div class="dropdown-content">
-                        <a onclick=resetMarkers()>Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
+
                 <!--Format for a new Button:
                 <input type="checkbox" class="btn btn-secondary" id="name of attribute column" onchange=filter(this)>Button Text</input>
                 -->
             </div>
 
         </div>
+        <div class="col-md-12">
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+                <a onclick=resetMarkers()>Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+      </div>
+
         <div class="col-md-12">
             <div class="btn-group" role="group" aria-label="Products">
                 <button type="checkbox" class="btn btn-secondary" id="dairy" onchange=filter(this)>Dairy</button>
@@ -89,7 +93,7 @@
      * radius: radius of to filter (in mi)
      */
     function distanceFilter(userLat, userLon, radius){
-        
+
     }
     /**
      * Filters out selected attributes
