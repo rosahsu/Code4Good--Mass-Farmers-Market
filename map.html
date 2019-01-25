@@ -23,32 +23,33 @@
     </h1>
     <div class="row align-items-center">
             <div class="btn-group snap_toggles" role="group" aria-label="Coupons">
-            <!--    <input type="checkbox" class="btn btn-secondary" id="SNAP/EBT" onchange=filter(this)>SNAP/EBT</input> <!--Button ID = name of attribute that button filters out-->
               <div class="col-md-12">
                 <div class="center">
                   <input type="checkbox" id="SNAPEBT" class="toggle_button" onchange=filter(this) style="display:none"/>
                   <label for="SNAPEBT" class="toggle"><span></span>SNAP</label>
                 </div>
-              </div>
+            </div>
 
-                <div class="col-md-12">
+            <div class="col-md-12">
                 <div class="center">
                   <input type="checkbox" id="HIP" class="toggle_button" onchange=filter(this) style="display:none"/>
                   <label for="HIP" class="toggle"><span></span>HIP</label>
                 </div>
-              </div>
+            </div>
 
-              <div class="col-md-12">
+            <div class="col-md-12">
                 <div class="center">
                   <input type="checkbox" id="SNAPMATCH" class="toggle_button" onchange=filter(this) style="display:none"/>
                   <label for="SNAPMATCH" class="toggle"><span></span>SNAP Match</label>
                 </div>
-              </div>
-                <!--Format for a new Button:
-                <input type="checkbox" class="btn btn-secondary" id="name of attribute column" onchange=filter(this)>Button Text</input>
-                -->
             </div>
+            <!--Format for a new Button:
+            <input type="checkbox" class="btn btn-secondary" id="name of attribute column" onchange=filter(this)>Button Text</input>
+            -->
         </div>
+    </div>
+</div>
+
 
         <div class="row align-items-center">
                 <div class="btn-group days_toggles" role="group" aria-label="Coupons">
@@ -117,22 +118,22 @@
                 <a onclick=distanceFilter(userLocation, 5)>5 mi</a>
             </div>
         </div>
-      </div>
+    </div>
 
-<!-- unused buttons
-        <div class="col-md-12">
-            <div class="btn-group" role="group" aria-label="Products">
-                <button type="checkbox" class="btn btn-secondary" id="dairy" onchange=filter(this)>Dairy</button>
-                <button type="checkbox" class="btn btn-secondary" id="bakedGoods">Baked Goods</button>
-                <button type="checkbox" class="btn btn-secondary" id= "produce"><i class="fas fa-carrot"></i>&nbsp Produce</button>
-            </div>
-        </div> -->
+    <!-- unused buttons
+            <div class="col-md-12">
+                <div class="btn-group" role="group" aria-label="Products">
+                    <button type="checkbox" class="btn btn-secondary" id="dairy" onchange=filter(this)>Dairy</button>
+                    <button type="checkbox" class="btn btn-secondary" id="bakedGoods">Baked Goods</button>
+                    <button type="checkbox" class="btn btn-secondary" id= "produce"><i class="fas fa-carrot"></i>&nbsp Produce</button>
+                </div>
+            </div> -->
+</div>
+<div class="row align-items-center maprow">
+    <div class="col-md-12">
+        <div id="map"></div>
     </div>
-    <div class="row align-items-center maprow">
-        <div class="col-md-12">
-            <div id="map"></div>
-        </div>
-    </div>
+</div>
 </div>
 </div>
 
@@ -213,7 +214,6 @@
 
     function initMap() {
         var csvFile = 'tweak.csv' //CSV  with farmer's market data
-
         console.log(csvFile);
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
@@ -235,7 +235,6 @@
             dynamicTyping: true,
             skipEmptyLines: true,
             complete: function (results) {
-                console.log(results);
                 data = results.data;
 
 
