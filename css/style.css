@@ -11,7 +11,7 @@ h1 {
   font-weight: 100;
   font-size: 30px;
   margin-top: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 2%;
 }
 
 h1 .divider {
@@ -142,4 +142,8 @@ h1 .sub-headline {
   position: absolute;
   top: calc(50% - 10px);
   left: calc(50% - 20px);
+}
+
+.snap_toggles {
+ margin-bottom: 50px;
 }
