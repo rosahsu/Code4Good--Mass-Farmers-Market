@@ -1,4 +1,4 @@
-Market Name,Address,Start Date,End Date,Days of Week,Open,Close,SNAP/EBT,SNAP MATCH,HIP,Latitude,Longitude
+Market Name,Address,Start Date,End Date,Days of Week,Open,Close,SNAPEBT,SNAPMATCH,HIP,Latitude,Longitude
 Acton-Boxborough Farmers Market,"10-12 Pearl St, Acton, MA 01720",6/10/2018,10/21/2018,Sunday,10:00 AM,1:00 PM,1,1,0,42.475238,-71.473694
 Arlington Farmers Market,"Russell Common Parking Lot, Winslow St @ Mystic St., Arlington, Ma",6/13/2018,10/31/2018,Wednesday,2:00 PM,6:30 PM,0,0,0,42.415969,-71.151248
 Ashfield Farmers Market,"Town Common, Main St. Ashfield, MA 01330",5/12/2018,10/27/2018,Saturday,9:00 AM,1:00 PM,1,0,1,42.525876,-72.790707

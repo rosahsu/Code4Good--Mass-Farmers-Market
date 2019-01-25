@@ -24,10 +24,30 @@
     <div class="row align-items-center">
         <div class="col-md-12">
             <div class="btn-group" role="group" aria-label="Coupons">
-                <input type="checkbox" class="btn btn-secondary" id="SNAP/EBT" onchange=filter(this)>SNAP/EBT</input> <!--Button ID = name of attribute that button filters out-->
-                <input type="checkbox" class="btn btn-secondary" id="HIP"  onchange=filter(this)>HIP</input>
-                <input type="checkbox" class="btn btn-secondary" id= "SNAP MATCH" onchange=filter(this)>SNAP Match</input>
+            <!--    <input type="checkbox" class="btn btn-secondary" id="SNAP/EBT" onchange=filter(this)>SNAP/EBT</input> <!--Button ID = name of attribute that button filters out-->
 
+
+
+              <div class="col-md-12">
+                <div class="center">
+                  <input type="checkbox" id="SNAPEBT" onchange=filter(this) style="display:none"/>
+                  <label for="SNAPEBT" class="toggle"><span></span>SNAP</label>
+                </div>
+              </div>
+
+                <div class="col-md-12">
+                <div class="center">
+                  <input type="checkbox" id="HIP" onchange=filter(this) style="display:none"/>
+                  <label for="HIP" class="toggle"><span></span>HIP</label>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="center">
+                  <input type="checkbox" id="SNAPMATCH" onchange=filter(this) style="display:none"/>
+                  <label for="SNAPMATCH" class="toggle"><span></span>SNAP Match</label>
+                </div>
+              </div>
                 <!--Format for a new Button:
                 <input type="checkbox" class="btn btn-secondary" id="name of attribute column" onchange=filter(this)>Button Text</input>
                 -->
