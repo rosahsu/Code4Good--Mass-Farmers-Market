@@ -93,46 +93,17 @@ h1 .sub-headline {
 }
 
 
-#SNAPEBT:checked + .toggle:before {
-  background: #947ADA;
-}
-#SNAPEBT:checked + .toggle span {
-  background: #4F2EDC;
-  transform: translateX(20px);
-  transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
-  box-shadow: 0 3px 8px rgba(79, 46, 220, 0.2);
-}
-#SNAPEBT:checked + .toggle span:before {
-  transform: scale(1);
-  opacity: 0;
-  transition: all 0.4s ease;
+.toggle_button:checked + .toggle:before {
+  background: #1abc9c;
 }
 
-#SNAPMATCH:checked + .toggle:before {
-  background: #947ADA;
-}
-#SNAPMATCH:checked + .toggle span {
-  background: #4F2EDC;
+.toggle_button:checked + .toggle span {
+  background: #27ae60;
   transform: translateX(20px);
   transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
   box-shadow: 0 3px 8px rgba(79, 46, 220, 0.2);
 }
-#SNAPMATCH:checked + .toggle span:before {
-  transform: scale(1);
-  opacity: 0;
-  transition: all 0.4s ease;
-}
-
-#HIP:checked + .toggle:before {
-  background: #947ADA;
-}
-#HIP:checked + .toggle span {
-  background: #4F2EDC;
-  transform: translateX(20px);
-  transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
-  box-shadow: 0 3px 8px rgba(79, 46, 220, 0.2);
-}
-#HIP:checked + .toggle span:before {
+.toggle_button:checked + .toggle span:before {
   transform: scale(1);
   opacity: 0;
   transition: all 0.4s ease;
@@ -144,6 +115,11 @@ h1 .sub-headline {
   left: calc(50% - 20px);
 }
 
-.snap_toggles {
- margin-bottom: 50px;
+.snap_toggles  {
+ margin-bottom: 5%;
+}
+
+.days_toggles  {
+ margin-bottom: 5%;
+ width: 10%;
 }
