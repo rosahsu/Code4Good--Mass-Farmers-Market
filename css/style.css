@@ -52,7 +52,7 @@ h2 {
         margin: 0;
         padding: 0;
     }
-
+/*
     .toggle {
   position: relative;
   display: block;
@@ -75,7 +75,7 @@ h2 {
   transition: background 0.2s ease;
 }
 .toggle span {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 20px;
@@ -88,7 +88,7 @@ h2 {
 }
 .toggle span:before {
   content: "";
-  position: absolute;
+  position: relative;
   display: block;
   margin: -18px;
   width: 56px;
@@ -131,3 +131,24 @@ h2 {
  margin-bottom: 5%;
  width: 10%;
 }
+
+#checkboxarea {
+  border-color: green;
+} */
+
+
+/* Toggle styles */
+
+.toggle.ios, .toggle-on.ios, .toggle-off.ios {
+   border-radius: 20px;
+    border-color: #9A9999;
+  }
+  .toggle.ios .toggle-handle {
+    border-radius: 20px;
+      border-color: #9A9999;
+   }
+
+.toggle-handle {
+  color:  #9A9999;
+
+  }

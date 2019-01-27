@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/leaflet.css">
     <link rel="stylesheet" href="css/dropdownbtn.css">
+    <link rel="stylesheet" href="css/bootstrap-toggle.min.css">
+
 
 </head>
 <body>
@@ -27,25 +29,99 @@
         </div>
     </div>
     <h2>   What services are you looking for? </h2>
-    <div class="row align-items-center">
+      <div class="row align-items-center">
+          <div class="col-md-1">
+            <input type="checkbox" data-toggle="toggle" id="SNAPEBT" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+            <label class="form-check-label" for="SNAPEBT">
+              SNAP
+            </label>
+          </div>
+          <div class="col-md-1">
+            <input type="checkbox" data-toggle="toggle" id="HIP" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+            <label class="form-check-label" for="HIP">
+              HIP
+            </label>
+          </div>
+          <div class="col-md-2">
+            <input type="checkbox" data-toggle="toggle" id="SNAPMATCH" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+            <label class="form-check-label" for="SNAPMATCH">
+              SNAP Match
+            </label>
+          </div>
+      </div>
 
-        <div class="btn-group snap_toggles" role="group" aria-label="Coupons">
-            <div class="col-md-12">
+      <h2>   What days of the week do you want to go? </h2>
+            <div class="row align-items-center">
+                  <div class="col-md-1">
+                    <input type="checkbox" data-toggle="toggle" id="Monday" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+                    <label class="form-check-label" for="Monday">
+                      Monday
+                    </label>
+                  </div>
 
-                <div class="center">
+                  <div class="col-md-1">
+                    <input type="checkbox" data-toggle="toggle" id="Tuesday" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+                    <label class="form-check-label" for="Tuesday">
+                      Tuesday
+                    </label>
+                  </div>
+
+                  <div class="col-md-1">
+                    <input type="checkbox" data-toggle="toggle" id="Wednesday" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+                    <label class="form-check-label" for="Wednesday">
+                      Wednesday
+                    </label>
+                  </div>
+
+                  <div class="col-md-1">
+                    <input type="checkbox" data-toggle="toggle" id="Thursday" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+                    <label class="form-check-label" for="Thursday">
+                      Thursday
+                    </label>
+                  </div>
+
+                  <div class="col-md-1">
+                    <input type="checkbox" data-toggle="toggle" id="Friday" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+                    <label class="form-check-label" for="Friday">
+                      Friday
+                    </label>
+                  </div>
+
+                  <div class="col-md-1">
+                    <input type="checkbox" data-toggle="toggle" id="Saturday" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+                    <label class="form-check-label" for="Saturday">
+                    Saturday
+                    </label>
+                  </div>
+
+                  <div class="col-md-1">
+                    <input type="checkbox" data-toggle="toggle" id="Sunday" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+                    <label class="form-check-label" for="Sunday">
+                      Sunday
+                    </label>
+                  </div>
+
+            </div>
+
+  <!--  <div class="row align-items-center">
+
+        <div class="snap_toggles">>
+            <div class="col-md-4">
+
+                <div class="center checkboxarea">
                     <input type="checkbox" id="SNAPEBT" class="toggle_button" onchange=filter(this) style="display:none"/>
                     <label for="SNAPEBT" class="toggle"><span></span>SNAP</label>
                 </div>
             </div>
 
-            <div class="col-md-12">
+            <div class="col-md-4">
                 <div class="center">
                     <input type="checkbox" id="HIP" class="toggle_button" onchange=filter(this) style="display:none"/>
                     <label for="HIP" class="toggle"><span></span>HIP</label>
                 </div>
             </div>
 
-            <div class="col-md-12">
+            <div class="col-md-4">
                 <div class="center">
                     <input type="checkbox" id="SNAPMATCH" class="toggle_button" onchange=filter(this) style="display:none"/>
                     <label for="SNAPMATCH" class="toggle"><span></span>SNAP Match</label>
@@ -53,7 +129,7 @@
             </div>
             <!--Format for a new Button:
             <input type="checkbox" class="btn btn-secondary" id="name of attribute column" onchange=filter(this)>Button Text</input>
-            -->
+
         </div>
     </div>
 
@@ -111,9 +187,9 @@
                   </div>
                     <!--Format for a new Button:
                     <input type="checkbox" class="btn btn-secondary" id="name of attribute column" onchange=filter(this)>Button Text</input>
-                    -->
+
                 </div>
-        </div>
+        </div>  -->
 
 
 
@@ -142,7 +218,12 @@
 </div>
 </div>
 
-
+<!-- Load JS libraries: jQuery, bootstrap,  -->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- thanks to http://www.bootstraptoggle.com for toggle style -->
+<script src="js/bootstrap-toggle.min.js"></script>
 
 
 <script src="papaparse.min.js"></script>
@@ -295,5 +376,6 @@
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlg_RXppjqCe1dTW8XW2xBYgmq84-O-xQ&callback=initMap"
         async defer></script>
+
 </body>
 </html>
