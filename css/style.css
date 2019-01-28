@@ -140,17 +140,18 @@ h2 {
 /* Toggle styles */
 
 .toggle.ios, .toggle-on.ios, .toggle-off.ios {
-   border-radius: 20px;
+
     border-color: #9A9999;
     margin-top: 1%;
   }
   .toggle.ios .toggle-handle {
-    border-radius: 20px;
+
       border-color: #9A9999;
       margin-top: 1%;
    }
 
-.toggle-handle {
-  color:  #9A9999;
+.toggle-handle.btn.button-default {
+  color:  #e67e22;
+  fill:  #e67e22;
 
   }
