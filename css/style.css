@@ -141,17 +141,20 @@ h2 {
 
 .toggle.ios, .toggle-on.ios, .toggle-off.ios {
 
-    border-color: #9A9999;
+    border-color: #000000;
     margin-top: 1%;
+
   }
   .toggle.ios .toggle-handle {
+    background-color: white;
+    border-color: #000000;
 
-      border-color: #9A9999;
-      margin-top: 1%;
    }
 
-.toggle-handle.btn.button-default {
-  color:  #e67e22;
-  fill:  #e67e22;
+  .form-check-label {
+      color: #888;
+  }
 
+  .toggle-off {
+    color: #888;
   }
