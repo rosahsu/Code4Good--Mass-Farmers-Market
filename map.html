@@ -124,19 +124,6 @@
         </div>
 
     </div>
-
-    <div class="row align-items-center">
-        <div class="col-md-12">
-            <div class="dropdown">
-                <button class="dropbtn">Distance</button>
-                <div class="dropdown-content">
-                    <a onclick=distanceFilter(userLocation,1)>1 mi</a>
-                    <a onclick=distanceFilter(userLocation,2)>2 mi</a>
-                    <a onclick=distanceFilter(userLocation,5)>5 mi</a>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <!-- Load JS libraries: jQuery, bootstrap,  -->
@@ -241,6 +228,17 @@
     var market_URLs = []; //list of direction url for each market
     var map;
     var userLocation;
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            userLocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            console.log(userLocation)
+        });
+    } else {
+        console.log("No location available.");
+    }
     /**
      * Initializes map with markers and data
      */
@@ -248,17 +246,6 @@
     function initMap() {
         var csvFile = 'tweak.csv' //CSV  with farmer's market data
         console.log(csvFile);
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                userLocation = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
-                console.log(userLocation)
-            });
-        } else {
-            console.log("No location available.");
-        }
         var boston = {lat: 42.359884, lng: -71.058813}; //Location of Boston
         map = new google.maps.Map(
             document.getElementById('map'), {zoom: 8, center: boston}); //Creates map centered on Boston
@@ -269,13 +256,12 @@
             skipEmptyLines: true,
             complete: function (results) {
                 data = results.data;
-
-
                 for (var i = 0; i < data.length; i++) {
                     data[i].Latitude != 0 && data[i].Longitude != 0
                     var location = {lat: data[i].Latitude, lng: data[i].Longitude}; //Gets location of each farmer's market
                     var marker = new google.maps.Marker({position: location, map: map}) //Creates a marker and places it on the map
                     markers.push(marker);
+                    console.log(data[i]["Market Name"] + "has been added");
                     //Stores marker in array
 
                     //info for creating info-window for each marker

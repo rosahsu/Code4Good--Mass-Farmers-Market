@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51e11ad4-f6dc-46eb-8af7-07f1c9f3d278" name="Default" comment="fixed issue where franklin farmers market appears for every marker when hovered over">
-      <change afterPath="$PROJECT_DIR$/css/resultspanel.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/dropdownbtn.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/dropdownbtn.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/map.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,13 +56,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="213" column="42" lean-forward="true" selection-start-line="213" selection-start-column="42" selection-end-line="213" selection-end-column="42" />
+            <state relative-caret-position="266">
+              <caret line="240" column="5" selection-start-line="240" selection-start-column="5" selection-end-line="240" selection-end-column="5" />
               <folding>
-                <element signature="e#5395#6121#0" />
-                <element signature="e#6609#7091#0" />
-                <element signature="e#7174#7474#0" />
-                <element signature="e#7502#7603#0" />
                 <element signature="n#script#7;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
@@ -84,7 +77,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/dropdownbtn.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="544">
               <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
             </state>
           </provider>
@@ -102,8 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-473">
-              <caret line="5164" lean-forward="true" selection-start-line="5164" selection-end-line="5164" />
+            <state relative-caret-position="87788">
+              <caret line="5164" selection-start-line="5164" selection-end-line="5164" />
               <folding>
                 <element signature="e#73878#74078#2" expanded="true" />
                 <element signature="e#74310#74459#2" expanded="true" />
@@ -270,6 +263,7 @@
       <workItem from="1548275010812" duration="6226000" />
       <workItem from="1548390205605" duration="1414000" />
       <workItem from="1548684861153" duration="5613000" />
+      <workItem from="1548788662867" duration="301000" />
     </task>
     <task id="LOCAL-00001" summary="Created info windows for each marker. &#10;TO DO:&#10;- only make one open at a time&#10;- input more info like hours, days open, SNAP, SNAP MATCH, EBT">
       <created>1547870664982</created>
@@ -310,10 +304,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51034000" />
+    <option name="totallyTimeSpent" value="51335000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49744463" weight="0.79271257" />
       <window_info id="Structure" order="1" sideWeight="0.5025554" side_tool="true" weight="0.3838081" />
@@ -531,24 +526,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/leaflet.css">
+    <entry file="file://$PROJECT_DIR$/css/dropdownbtn.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        <state relative-caret-position="544">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/dropdownbtn.css">
+    <entry file="file://$PROJECT_DIR$/css/resultspanel.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        <state relative-caret-position="85">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-473">
-          <caret line="5164" lean-forward="true" selection-start-line="5164" selection-end-line="5164" />
+        <state relative-caret-position="87788">
+          <caret line="5164" selection-start-line="5164" selection-end-line="5164" />
           <folding>
             <element signature="e#73878#74078#2" expanded="true" />
             <element signature="e#74310#74459#2" expanded="true" />
@@ -562,13 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/resultspanel.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -576,15 +564,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/leaflet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/map.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="213" column="42" lean-forward="true" selection-start-line="213" selection-start-column="42" selection-end-line="213" selection-end-column="42" />
+        <state relative-caret-position="266">
+          <caret line="240" column="5" selection-start-line="240" selection-start-column="5" selection-end-line="240" selection-end-column="5" />
           <folding>
-            <element signature="e#5395#6121#0" />
-            <element signature="e#6609#7091#0" />
-            <element signature="e#7174#7474#0" />
-            <element signature="e#7502#7603#0" />
             <element signature="n#script#7;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
