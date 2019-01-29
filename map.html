@@ -109,7 +109,7 @@
     <div class="row align-items-center">
         <div class="col-md-12">
             <div class="dropdown">
-                <button class="dropbtn">Dropdown</button>
+                <button class="dropbtn">Distance</button>
                 <div class="dropdown-content">
                     <a onclick=distanceFilter(userLocation,1)>1 mi</a>
                     <a onclick=distanceFilter(userLocation,2)>2 mi</a>
@@ -207,6 +207,7 @@
     var data;
     var markers = []; //Empty array
     var infowindows = [];
+    var market_URLs = []; //list of direction url for each market
     var map;
     var userLocation;
     /**
@@ -274,6 +275,18 @@
                         this.infowindow.close();
                     });
                     infowindows.push(infowindow);
+                    var url_template =  "https://www.google.com/maps/dir/?api=1&origin="+userLocation.lat+","+
+                        userLocation.lng +"&destination="+String(data[i].Latitude) +","+String(data[i].Longitude);
+                    console.log("market:" , data[i]["Market Name"]);
+
+                    marker.url = url_template;
+                    market_URLs.push(url_template);
+
+                    google.maps.event.addListener(marker, 'click', function () {
+                        window.open(this.url);
+                    });
+
+
 
                 }
 
