@@ -183,8 +183,8 @@
         resetMarkers();
         for (var i = 0; i < markers.length; i++){
             if(getDistance(location.lat, location.lng, data[i].Latitude, data[i].Longitude) > radius){
-                console.log(data[i]["Market Name"] + "location is" + "[" + data[i].Latitude + ", " + data[i].Longitude + "]");
-                console.log(getDistance(location.lat, location.lng, data[i].Latitude, data[i].Longitude))
+                //console.log(data[i]["Market Name"] + "location is" + "[" + data[i].Latitude + ", " + data[i].Longitude + "]");
+                //console.log(getDistance(location.lat, location.lng, data[i].Latitude, data[i].Longitude))
                 markers[i].setMap(null);
             }
         }
@@ -192,15 +192,60 @@
     /**
      * Filters out selected attributes
      */
+    var filters_applied = []; //keeping track of which filters have been applied
+                                //buttonList passed into filterList
+
+    function filterList(buttonList) {//filters based on buttons used
+        //console.log("FILTERLIST IS RUNNING...")
+        for (var filter = 0; filter < buttonList.length; filter ++) {
+            var current_filter = buttonList[filter];
+            console.log("current filter" , current_filter);
+            for (var i = 0; i < data.length; i ++) {
+                if (data[i][current_filter] == 0) {
+                    markers[i].setMap(null);
+                }
+            }
+        }
+    }
+    function arrayRemove(arr, value) {
+        var new_array = [];
+        for (var i = 0 ; i < arr.length;i ++) {
+            if (arr[i] != value) {
+                new_array.push(arr[i])
+            }
+        }
+        return new_array;
+
+
+
+    }
+
     function filter(button){
         if (document.getElementById(button.id).checked == false){
-            resetMarkers()
+            console.log("resetting.....");
+            filters_applied = arrayRemove(filters_applied,button.id); //remove from buttons used
+
+
+            for (var i =0; i < data.length; i++) {
+                if (data[i][button.id] == 0) { //undo filter that was toggled
+                    markers[i].setMap(map);
+                }
+
+            }
+
+            console.log(filters_applied);
+            filterList(filters_applied); //re-apply based on new filter list
         } else {
+            /*
             for(var i = 0; i < data.length; i++){
                 if(data[i][button.id] == 0) {
                     markers[i].setMap(null);
                 }
             }
+            */
+            filters_applied.push(button.id); //add to list of filter buttons used
+            //console.log("filters used:",filters_applied);
+            filterList(filters_applied);
         }
     }
     function updateResults(){
@@ -219,6 +264,7 @@
         for(var i = 0; i < markers.length; i++){
             markers[i].setMap(map)
         }
+        filters_applied = [];
     }
 </script>
 <script>
