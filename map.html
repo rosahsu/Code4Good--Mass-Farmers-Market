@@ -240,41 +240,40 @@
 
 
                 for (var i = 0; i < data.length; i++) {
-                    if (data[i].Latitude != 0 && data[i].Longitude != 0) {
-                        var location = {lat: data[i].Latitude, lng: data[i].Longitude}; //Gets location of each farmer's market
-                        var marker = new google.maps.Marker({position: location, map: map}) //Creates a marker and places it on the map
-                        markers.push(marker);
-                        //Stores marker in array
+                    data[i].Latitude != 0 && data[i].Longitude != 0
+                    var location = {lat: data[i].Latitude, lng: data[i].Longitude}; //Gets location of each farmer's market
+                    var marker = new google.maps.Marker({position: location, map: map}) //Creates a marker and places it on the map
+                    markers.push(marker);
+                    //Stores marker in array
 
-                        //info for creating info-window for each marker
-                        var name = data[i]["Market Name"];
-                        var days = data[i]["Days of Week"];
-                        var open_time = data[i]["Open"];
-                        var close_time = data[i]["Close"];
-                        var start_date = data[i]["Start Date"];
-                        var end_date = data[i]["End Date"];
-                        //var url = generate_map_url(data[i]["Address"]);
+                    //info for creating info-window for each marker
+                    var name = data[i]["Market Name"];
+                    var days = data[i]["Days of Week"];
+                    var open_time = data[i]["Open"];
+                    var close_time = data[i]["Close"];
+                    var start_date = data[i]["Start Date"];
+                    var end_date = data[i]["End Date"];
+                    //var url = generate_map_url(data[i]["Address"]);
 
-                        var contentString =  '<b>' + name + '</b>' +
-                            '<p><u>Dates:</u> ' + start_date + "-" + end_date + '</p>' +
-                            '<p><u>Hours:</u> ' + open_time + "-" + close_time + '</p>' +
-                            '<p><u>Days Open:</u> ' + days + '</p>'
-                        ;
+                    var contentString =  '<b>' + name + '</b>' +
+                        '<p><u>Dates:</u> ' + start_date + "-" + end_date + '</p>' +
+                        '<p><u>Hours:</u> ' + open_time + "-" + close_time + '</p>' +
+                        '<p><u>Days Open:</u> ' + days + '</p>'
+                    ;
 
-                        var infowindow = new google.maps.InfoWindow ({
-                            content : contentString
-                        });
-                        marker.infowindow = infowindow;
-                        google.maps.event.addListener(marker,'mouseover',function() {
-                            this.infowindow.open(map,this);
+                    var infowindow = new google.maps.InfoWindow ({
+                        content : contentString
+                    });
+                    marker.infowindow = infowindow;
+                    google.maps.event.addListener(marker,'mouseover',function() {
+                        this.infowindow.open(map,this);
 
 
-                        });
-                        google.maps.event.addListener(marker,'mouseout',function() {
-                            this.infowindow.close();
-                        });
-                        infowindows.push(infowindow);
-                    }
+                    });
+                    google.maps.event.addListener(marker,'mouseout',function() {
+                        this.infowindow.close();
+                    });
+                    infowindows.push(infowindow);
 
                 }
 
