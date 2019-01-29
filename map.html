@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/leaflet.css">
     <link rel="stylesheet" href="css/dropdownbtn.css">
     <link rel="stylesheet" href="css/bootstrap-toggle.min.css">
+    <link rel="stylesheet" href="css/resultspanel.css">
 
 
 </head>
@@ -47,6 +48,27 @@
             <label class="form-check-label" for="SNAPMATCH">
                 SNAP Match
             </label>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-1">
+                <div class="dropdown">
+                    <button class="dropbtn">Distance</button>
+                    <div class="dropdown-content">
+                        <a onclick=distanceFilter(userLocation,1)>1 mi</a>
+                        <a onclick=distanceFilter(userLocation,2)>2 mi</a>
+                        <a onclick=distanceFilter(userLocation,5)>5 mi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading"><h4 class="panel-title">Results</h4>
+            </div>
+            <div class="panel-body">
+                <ul class="result-list-group" id="result_list">
+                    <!--<li class="list-group-item">Farmer's Market</li>-->
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -101,22 +123,6 @@
             </label>
         </div>
 
-    </div>
-
-
-
-
-    <div class="row align-items-center">
-        <div class="col-md-12">
-            <div class="dropdown">
-                <button class="dropbtn">Dropdown</button>
-                <div class="dropdown-content">
-                    <a onclick=distanceFilter(userLocation,1)>1 mi</a>
-                    <a onclick=distanceFilter(userLocation,2)>2 mi</a>
-                    <a onclick=distanceFilter(userLocation,5)>5 mi</a>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
@@ -194,6 +200,18 @@
                 if(data[i][button.id] == 0) {
                     markers[i].setMap(null);
                 }
+            }
+        }
+    }
+    function updateResults(){
+        panel = document.getElementById("result_list");
+        for(var i = 0; i < markers.length; i++){
+            marker = markers[i];
+            if(marker.map != null){
+                result = document.createElement("li");
+                text = document.createTextNode(data[i]["Market Name"]);
+                result.appendChild(text);
+                panel.appendChild(result);
             }
         }
     }
@@ -276,6 +294,7 @@
                     infowindows.push(infowindow);
 
                 }
+                updateResults();
 
             }
 
