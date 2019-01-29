@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/leaflet.css">
     <link rel="stylesheet" href="css/dropdownbtn.css">
+    <link rel="stylesheet" href="css/bootstrap-toggle.min.css">
+
 
 </head>
 <body>
@@ -18,106 +20,152 @@
     <h1>Massachusetts Farmers Market Alliance
         <span class="divider">|</span>
         <span class="sub-headline">
-          <span id="station-count"></span> Market Locations
+         Market Locations
         </span>
     </h1>
-    <div class="row align-items-center">
-            <div class="btn-group snap_toggles" role="group" aria-label="Coupons">
-            <!--    <input type="checkbox" class="btn btn-secondary" id="SNAP/EBT" onchange=filter(this)>SNAP/EBT</input> <!--Button ID = name of attribute that button filters out-->
-
-              <div class="col-md-12">
-                <div class="center">
-                  <input type="checkbox" id="SNAPEBT" onchange=filter(this) style="display:none"/>
-                  <label for="SNAPEBT" class="toggle"><span></span>SNAP</label>
-                </div>
-              </div>
-
-                <div class="col-md-12">
-                <div class="center">
-                  <input type="checkbox" id="HIP" onchange=filter(this) style="display:none"/>
-                  <label for="HIP" class="toggle"><span></span>HIP</label>
-                </div>
-              </div>
-
-              <div class="col-md-12">
-                <div class="center">
-                  <input type="checkbox" id="SNAPMATCH" onchange=filter(this) style="display:none"/>
-                  <label for="SNAPMATCH" class="toggle"><span></span>SNAP Match</label>
-                </div>
-              </div>
-                <!--Format for a new Button:
-                <input type="checkbox" class="btn btn-secondary" id="name of attribute column" onchange=filter(this)>Button Text</input>
-                -->
-            </div>
-        </div>
-
-      <div class="row align-items-center">
-        <div class="col-md-12">
-        <div class="dropdown">
-            <button class="dropbtn">Dropdown</button>
-            <div class="dropdown-content">
-                <a onclick=distanceFilter(9300)>1 Mile</a>
-                <a onclick=distanceFilter(5)>5 Miles</a>
-                <a onclick=distanceFilter(10)>10 Miles</a>
-            </div>
-        </div>
-      </div>
-
-<!-- unused buttons
-        <div class="col-md-12">
-            <div class="btn-group" role="group" aria-label="Products">
-                <button type="checkbox" class="btn btn-secondary" id="dairy" onchange=filter(this)>Dairy</button>
-                <button type="checkbox" class="btn btn-secondary" id="bakedGoods">Baked Goods</button>
-                <button type="checkbox" class="btn btn-secondary" id= "produce"><i class="fas fa-carrot"></i>&nbsp Produce</button>
-            </div>
-        </div> -->
-    </div>
     <div class="row align-items-center maprow">
         <div class="col-md-12">
             <div id="map"></div>
         </div>
     </div>
-</div>
+    <h2>   What services are you looking for? </h2>
+    <div class="row">
+        <div class="col-md-1">
+            <input type="checkbox" data-toggle="toggle" id="SNAPEBT" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+            <label class="form-check-label" for="SNAPEBT">
+                SNAP
+            </label>
+        </div>
+        <div class="col-md-1">
+            <input type="checkbox" data-toggle="toggle" id="HIP" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+            <label class="form-check-label" for="HIP">
+                HIP
+            </label>
+        </div>
+        <div class="col-md-1">
+            <input type="checkbox" data-toggle="toggle" id="SNAPMATCH" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+            <label class="form-check-label" for="SNAPMATCH">
+                SNAP Match
+            </label>
+        </div>
+    </div>
+
+    <h2>   What days of the week do you want to go? </h2>
+    <div class="row">
+        <div class="col-md-1">
+            <input type="checkbox" data-toggle="toggle" id="Monday" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+            <label class="form-check-label" for="Monday">
+                Monday
+            </label>
+        </div>
+
+        <div class="col-md-1">
+            <input type="checkbox" data-toggle="toggle" id="Tuesday" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+            <label class="form-check-label" for="Tuesday">
+                Tuesday
+            </label>
+        </div>
+
+        <div class="col-md-1">
+            <input type="checkbox" data-toggle="toggle" id="Wednesday" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+            <label class="form-check-label" for="Wednesday">
+                Wednesday
+            </label>
+        </div>
+
+        <div class="col-md-1">
+            <input type="checkbox" data-toggle="toggle" id="Thursday" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+            <label class="form-check-label" for="Thursday">
+                Thursday
+            </label>
+        </div>
+
+        <div class="col-md-1">
+            <input type="checkbox" data-toggle="toggle" id="Friday" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+            <label class="form-check-label" for="Friday">
+                Friday
+            </label>
+        </div>
+
+        <div class="col-md-1">
+            <input type="checkbox" data-toggle="toggle" id="Saturday" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+            <label class="form-check-label" for="Saturday">
+                Saturday
+            </label>
+        </div>
+
+        <div class="col-md-1">
+            <input type="checkbox" data-toggle="toggle" id="Sunday" onchange=filter(this) data-on=" " data-off=" " data-style="ios" data-onstyle="success">
+            <label class="form-check-label" for="Sunday">
+                Sunday
+            </label>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="row align-items-center">
+        <div class="col-md-12">
+            <div class="dropdown">
+                <button class="dropbtn">Dropdown</button>
+                <div class="dropdown-content">
+                    <a onclick=distanceFilter(userLocation,1)>1 mi</a>
+                    <a onclick=distanceFilter(userLocation,2)>2 mi</a>
+                    <a onclick=distanceFilter(userLocation,5)>5 mi</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
+<!-- Load JS libraries: jQuery, bootstrap,  -->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- thanks to http://www.bootstraptoggle.com for toggle style -->
+<script src="js/bootstrap-toggle.min.js"></script>
 
 
 <script src="papaparse.min.js"></script>
 <script>
-    var userLat;
-    var userLon;
-    window.onload = function() {
-        var startPos;
-        var geoSuccess = function(position) {
-            startPos = position;
-            userLat = startPos.coords.longitude;
-            userLon = startPos.coords.latitude;
-            document.getElementById('startLat').innerHTML = String(startPos.coords.latitude);
-            document.getElementById('startLon').innerHTML = String(startPos.coords.longitude);
-        };
-        navigator.geolocation.getCurrentPosition(geoSuccess);
-    }
+    /**
+     * Returns distance between two latitudes and longitudes
+     * lat1, lon1, lat2, lon2 - Latitudes and longitudes of two points, in degree form
+     * unit - 'K' for kilometers, 'N' for nautical miles, leave empty for miles
+     */
     function getDistance(lat1, lon1, lat2, lon2, unit) {
         if ((lat1 == lat2) && (lon1 == lon2)) {
             return 0;
         }
         else {
-            var radlat1 = Math.PI * lat1/180;
-            var radlat2 = Math.PI * lat2/180;
-            var theta = lon1-lon2;
-            var radtheta = Math.PI * theta/180;
-            var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-            if (dist > 1) {
-                dist = 1;
-            }
-            dist = Math.acos(dist);
-            dist = dist * 180/Math.PI;
-            dist = dist * 60 * 1.1515;
-            if (unit=="K") { dist = dist * 1.609344 }
-            if (unit=="N") { dist = dist * 0.8684 }
-            return dist;
+            var R = 3959 //miles
+            var rad1 = Math.radians(lat1);
+            var rad2 = Math.radians(lat2);
+            var deltaLat = Math.radians(lat2-lat1);
+            var deltaLong = Math.radians(lon2-lon1);
+
+            var a = Math.sin(deltaLat/2) * Math.sin(deltaLat/2) +
+                Math.cos(rad1) * Math.cos(rad2) *
+                Math.sin(deltaLong/2) * Math.sin(deltaLong/2);
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+            var d = R * c;
+            if (unit=="K") { d = d * 1.609344 }
+            if (unit=="N") { d = d * 0.8684 }
+            return d;
         }
     }
+    // Converts from degrees to radians.
+    Math.radians = function(degrees) {
+        return degrees * Math.PI / 180;
+    };
+
+    // Converts from radians to degrees.
+    Math.degrees = function(radians) {
+        return radians * 180 / Math.PI;
+    };
 
     /**
      * Filters out markers outside a certain radius (in mi)
@@ -125,23 +173,16 @@
      * userLon: longitude of user
      * radius: radius of to filter (in mi)
      */
-    function distanceFilter(radius){
-        console.log("user:",userLon,userLat);
-        for (var i=0 ; i < data.length; i ++) {
-            var market_lon = data[i].Latitude;
-            var market_lat = data[i].Longitude;
-            console.log("market:",market_lon,market_lat);
-
-            var distance = getDistance(userLat,userLon,market_lon,market_lat,"K");
-            console.log(distance);
-            if (distance > radius) {
-                //console.log(data[i]["Market Name"]);
-                markers[i].setMap(null)
+    function distanceFilter(location, radius){
+        resetMarkers();
+        for (var i = 0; i < markers.length; i++){
+            if(getDistance(location.lat, location.lng, data[i].Latitude, data[i].Longitude) > radius){
+                console.log(data[i]["Market Name"] + "location is" + "[" + data[i].Latitude + ", " + data[i].Longitude + "]");
+                console.log(getDistance(location.lat, location.lng, data[i].Latitude, data[i].Longitude))
+                markers[i].setMap(null);
             }
         }
-
     }
-
     /**
      * Filters out selected attributes
      */
@@ -162,25 +203,30 @@
         }
     }
 </script>
-
-
-
-
-
-
 <script>
     var data;
     var markers = []; //Empty array
     var infowindows = [];
     var map;
+    var userLocation;
     /**
      * Initializes map with markers and data
      */
 
     function initMap() {
         var csvFile = 'tweak.csv' //CSV  with farmer's market data
-
         console.log(csvFile);
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                userLocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                console.log(userLocation)
+            });
+        } else {
+            console.log("No location available.");
+        }
         var boston = {lat: 42.359884, lng: -71.058813}; //Location of Boston
         map = new google.maps.Map(
             document.getElementById('map'), {zoom: 8, center: boston}); //Creates map centered on Boston
@@ -190,46 +236,44 @@
             dynamicTyping: true,
             skipEmptyLines: true,
             complete: function (results) {
-                console.log(results);
                 data = results.data;
 
 
                 for (var i = 0; i < data.length; i++) {
-                    if (data[i].Latitude != 0 && data[i].Longitude != 0) {
-                        var location = {lat: data[i].Latitude, lng: data[i].Longitude}; //Gets location of each farmer's market
-                        var marker = new google.maps.Marker({position: location, map: map}) //Creates a marker and places it on the map
-                        markers.push(marker);
-                        //Stores marker in array
+                    data[i].Latitude != 0 && data[i].Longitude != 0
+                    var location = {lat: data[i].Latitude, lng: data[i].Longitude}; //Gets location of each farmer's market
+                    var marker = new google.maps.Marker({position: location, map: map}) //Creates a marker and places it on the map
+                    markers.push(marker);
+                    //Stores marker in array
 
-                        //info for creating info-window for each marker
-                        var name = data[i]["Market Name"];
-                        var days = data[i]["Days of Week"];
-                        var open_time = data[i]["Open"];
-                        var close_time = data[i]["Close"];
-                        var start_date = data[i]["Start Date"];
-                        var end_date = data[i]["End Date"];
-                        //var url = generate_map_url(data[i]["Address"]);
+                    //info for creating info-window for each marker
+                    var name = data[i]["Market Name"];
+                    var days = data[i]["Days of Week"];
+                    var open_time = data[i]["Open"];
+                    var close_time = data[i]["Close"];
+                    var start_date = data[i]["Start Date"];
+                    var end_date = data[i]["End Date"];
+                    //var url = generate_map_url(data[i]["Address"]);
 
-                        var contentString =  '<b>' + name + '</b>' +
-                            '<p><u>Dates:</u> ' + start_date + "-" + end_date + '</p>' +
-                            '<p><u>Hours:</u> ' + open_time + "-" + close_time + '</p>' +
-                            '<p><u>Days Open:</u> ' + days + '</p>'
-                        ;
+                    var contentString =  '<b>' + name + '</b>' +
+                        '<p><u>Dates:</u> ' + start_date + "-" + end_date + '</p>' +
+                        '<p><u>Hours:</u> ' + open_time + "-" + close_time + '</p>' +
+                        '<p><u>Days Open:</u> ' + days + '</p>'
+                    ;
 
-                        var infowindow = new google.maps.InfoWindow ({
-                            content : contentString
-                        });
-                        marker.infowindow = infowindow;
-                        google.maps.event.addListener(marker,'mouseover',function() {
-                            this.infowindow.open(map,this);
+                    var infowindow = new google.maps.InfoWindow ({
+                        content : contentString
+                    });
+                    marker.infowindow = infowindow;
+                    google.maps.event.addListener(marker,'mouseover',function() {
+                        this.infowindow.open(map,this);
 
 
-                        });
-                        google.maps.event.addListener(marker,'mouseout',function() {
-                            this.infowindow.close();
-                        });
-                        infowindows.push(infowindow);
-                    }
+                    });
+                    google.maps.event.addListener(marker,'mouseout',function() {
+                        this.infowindow.close();
+                    });
+                    infowindows.push(infowindow);
 
                 }
 
@@ -237,9 +281,11 @@
 
         })
     }
+    console.log(markers);
 
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlg_RXppjqCe1dTW8XW2xBYgmq84-O-xQ&callback=initMap"
         async defer></script>
+
 </body>
 </html>
