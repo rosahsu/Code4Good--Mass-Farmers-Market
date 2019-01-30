@@ -12,14 +12,16 @@ h1 {
   font-size: 30px;
   margin-top: 50px;
   margin-bottom: 2%;
+  color: #0da4d3;
 }
 
 h1 .divider {
 	margin: 0 8px;
+    color: #aaa;
 }
 
 h1 .sub-headline {
-	color: #888;
+	color: #aaa;
 	font-weight: 300;
 }
 
@@ -147,6 +149,7 @@ h2 {
 
     border-color:#BDBDBD;
     margin-top: 1%;
+    background-color: #0da4d3;
 
   }
   .toggle.ios .toggle-handle {
@@ -161,4 +164,9 @@ h2 {
 
   .toggle-off {
     background-color: #E0E0E0;
+  }
+
+  .toggle-on {
+
+      background-color: #0da4d3;
   }
