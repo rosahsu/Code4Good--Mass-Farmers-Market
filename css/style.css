@@ -24,7 +24,7 @@ h1 .sub-headline {
 }
 
 h2 {
-  	color: #888;
+  	color: #aaa;
   font-weight: 100;
   font-size: 20px;
   margin-top: 50px;
@@ -141,20 +141,20 @@ h2 {
 
 .toggle.ios, .toggle-on.ios, .toggle-off.ios {
 
-    border-color:#9E9E9E;
+    border-color:#BDBDBD;
     margin-top: 1%;
 
   }
   .toggle.ios .toggle-handle {
     background-color: white;
-    border-color:#9E9E9E;
+    border-color: #BDBDBD;
 
    }
 
   .form-check-label {
-      color: #888;
+      color: #aaa;
   }
 
   .toggle-off {
-    background-color: #BDBDBD;
+    background-color: #E0E0E0;
   }
