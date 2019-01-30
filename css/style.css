@@ -184,3 +184,24 @@ h2 {
   .row {
     margin-bottom: 1%;
   }
+
+  #market-name-popup {
+      font-family: 'Bitter', serif;
+      color: #0da4d3;
+        font-size: 20px;
+
+  }
+
+  #market-details-popup {
+
+      color: #616161;
+      font-weight: bold;
+
+
+  }
+
+#pop-up-text {
+    font-size: 15px;
+    font-family: 'Bitter', serif;
+
+}

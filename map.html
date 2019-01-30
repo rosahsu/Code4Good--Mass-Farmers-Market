@@ -325,6 +325,8 @@
     var market_URLs = []; //list of direction url for each market
     var map;
     var userLocation;
+
+
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             userLocation = {
@@ -371,12 +373,14 @@
                     var close_time = data[i]["Close"];
                     var start_date = data[i]["Start Date"];
                     var end_date = data[i]["End Date"];
+                    var website = data[i]["Website"];
                     //var url = generate_map_url(data[i]["Address"]);
 
-                    var contentString =  '<b>' + name + '</b>' +
-                        '<p><u>Dates:</u> ' + start_date + "-" + end_date + '</p>' +
-                        '<p><u>Hours:</u> ' + open_time + "-" + close_time + '</p>' +
-                        '<p><u>Days Open:</u> ' + days + '</p>'
+                    var contentString =  '<p id="market-name-popup">' + name + '</p>' +
+                        '<p id="popup-text"> <span id= "market-details-popup"> Dates: </span> ' + start_date + "-" + end_date + '</p>' +
+                        '<p id="popup-text"> <span id= "market-details-popup">Hours: </span> ' + open_time + "-" + close_time + '</p>' +
+                        '<p id="popup-text"><span id= "market-details-popup"> Days Open:</span> ' + days + '</p>' +
+                        '<p id="popup-text"><span id= "market-details-popup">Website: </span> ' + website + '</p>'
                     ;
 
                     var infowindow = new google.maps.InfoWindow ({
