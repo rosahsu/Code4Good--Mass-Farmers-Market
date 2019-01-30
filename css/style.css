@@ -170,3 +170,17 @@ h2 {
 
       background-color: #0da4d3;
   }
+
+.btn:hover {
+    background-color: #BDBDBD;
+}
+
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #0c99c6;
+
+}
+
+  .row {
+    margin-bottom: 1%;
+  }
