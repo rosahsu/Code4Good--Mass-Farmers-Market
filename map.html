@@ -356,7 +356,10 @@
                 for (var i = 0; i < data.length; i++) {
                     data[i].Latitude != 0 && data[i].Longitude != 0
                     var location = {lat: data[i].Latitude, lng: data[i].Longitude}; //Gets location of each farmer's market
-                    var marker = new google.maps.Marker({position: location, map: map}) //Creates a marker and places it on the map
+                    var marker = new google.maps.Marker({
+                      position: location,
+                      map: map,
+                      icon: "img/icon-blue.png"}) //Creates a marker and places it on the map
                     markers.push(marker);
                     console.log(data[i]["Market Name"] + "has been added");
                     //Stores marker in array
