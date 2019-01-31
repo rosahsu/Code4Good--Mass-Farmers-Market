@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/leaflet.css">
     <link rel="stylesheet" href="css/dropdownbtn.css">
     <link rel="stylesheet" href="css/bootstrap-toggle.min.css">
     <link rel="stylesheet" href="css/resultspanel.css">
@@ -37,6 +36,7 @@
                         <div class="dropdown">
                             <button class="dropbtn">distance from me &nbsp; <i class="fas fa-caret-down"></i></button>
                             <div class="dropdown-content">
+                                <a onclick=clearResults()>Clear</a>
                                 <a onclick=distanceFilter(userLocation,1)>1 mile</a>
                                 <a onclick=distanceFilter(userLocation,5)>5 miles</a>
                                 <a onclick=distanceFilter(userLocation,10)>10 miles</a>
@@ -150,20 +150,20 @@
 
     STEP ONE: Copy the following code:
 
-    <h2 class="filter-header">   What products are you looking for? </h2> <!-- STEP TWO: Edit this header text to indicate what the filter does
+    <h2 class="filter-header">   What products are you looking for? </h2> STEP TWO: Edit this header text to indicate what the filter does
 
     <div class="row">
         <div class="col-md-1">
-          <!-- STEP THREE: edit the id (here it is "Bread") so that it matches exactly the column name in the dataset. Make sure to keep it in quotations.
+             STEP THREE: edit the id (here it is "Bread") so that it matches exactly the column name in the dataset. Make sure to keep it in quotations.
             <input type="checkbox" data-toggle="toggle" id="Bread" onchange=filter(this) data-on=" " data-off=" " data-style="ios"  >
-          <!--  STEP FOUR: edit the for (here it is "Bread") so that it matches exactly the column name in the dataset & the name you just put into id. Make sure to keep it in quotations
+              STEP FOUR: edit the for (here it is "Bread") so that it matches exactly the column name in the dataset & the name you just put into id. Make sure to keep it in quotations
             <label class="form-check-label" for="Bread">
-            <!-- STEP FIVE: edit the name of the button which will be displayed on the website. This can be whatever you want. Here it is Bread.
+              STEP FIVE: edit the name of the button which will be displayed on the website. This can be whatever you want. Here it is Bread.
                 Bread
             </label>
         </div>
 
-        <!--STEP SIX: Repeat for as many buttons as you want
+        STEP SIX: Repeat for as many buttons as you want
 
         <div class="col-md-1">
             <input type="checkbox" data-toggle="toggle" id="Dairy" onchange=filter(this) data-on=" " data-off=" " data-style="ios"  >
@@ -173,7 +173,7 @@
         </div>
       </div>
 
-<!-- end of instructions -->
+    end of instructions -->
 
 </div>
 
@@ -239,6 +239,7 @@
                 markers[i].setMap(null);
             }
         }
+        updateResults();
     }
     /**
      * Filters out selected attributes
@@ -287,19 +288,23 @@
             console.log(filters_applied);
             filterList(filters_applied); //re-apply based on new filter list
         } else {
-            /*
-            for(var i = 0; i < data.length; i++){
-                if(data[i][button.id] == 0) {
-                    markers[i].setMap(null);
-                }
-            }
-            */
             filters_applied.push(button.id); //add to list of filter buttons used
-            //console.log("filters used:",filters_applied);
             filterList(filters_applied);
         }
+        updateResults();
+    }
+    function clearResults(){
+        panel = document.getElementById("result_list");
+        children = panel.children;
+        for(var i = 0; i < children.length; i++){
+            panel.removeChild(children.item(i));
+            i=i-1;
+        }
+        console.log("Results cleared");
+
     }
     function updateResults(){
+        clearResults();
         panel = document.getElementById("result_list");
         for(var i = 0; i < markers.length; i++){
             marker = markers[i];
@@ -396,7 +401,7 @@
                         this.infowindow.close();
                     });
                     infowindows.push(infowindow);
-                    var url_template =  "https://www.google.com/maps/dir/?api=1&origin="+userLocation.lat+","+
+                    /**var url_template =  "https://www.google.com/maps/dir/?api=1&origin="+userLocation.lat+","+
                         userLocation.lng +"&destination="+String(data[i].Latitude) +","+String(data[i].Longitude);
                     console.log("market:" , data[i]["Market Name"]);
 
@@ -405,10 +410,7 @@
 
                     google.maps.event.addListener(marker, 'click', function () {
                         window.open(this.url);
-                    });
-
-
-
+                    });*/
                 }
                 updateResults();
 
@@ -416,7 +418,6 @@
 
         })
     }
-    console.log(markers);
 
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlg_RXppjqCe1dTW8XW2xBYgmq84-O-xQ&callback=initMap"
