@@ -9,9 +9,9 @@ body {
 
 h1 {
   font-weight: 100;
-  font-size: 30px;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  font-size: 35px;
+  margin-top: 4%;
+  margin-bottom: 4%;
   color: #0da4d3;
 }
 
@@ -218,4 +218,8 @@ a {
 a:hover {
 color: #0da4d3;
 text-decoration: none;
+}
+
+.panel-body {
+  margin-bottom: 4%;
 }
