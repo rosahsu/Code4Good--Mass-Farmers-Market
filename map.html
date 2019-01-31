@@ -326,6 +326,61 @@
         }
         filters_applied = [];
     }
+
+    function createMarkers(){
+        for (var i = 0; i < data.length; i++) {
+            data[i].Latitude != 0 && data[i].Longitude != 0
+            var location = {lat: data[i].Latitude, lng: data[i].Longitude}; //Gets location of each farmer's market
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                icon: "img/icon-blue.png"}) //Creates a marker and places it on the map
+            markers.push(marker);
+            console.log(data[i]["Market Name"] + "has been added");
+            //Stores marker in array
+
+            //info for creating info-window for each marker
+            var name = data[i]["Market Name"];
+            var days = data[i]["Days of Week"];
+            var open_time = data[i]["Open"];
+            var close_time = data[i]["Close"];
+            var start_date = data[i]["Start Date"];
+            var end_date = data[i]["End Date"];
+            var website = data[i]["Website"];
+            //var url = generate_map_url(data[i]["Address"]);
+
+            var contentString =  '<p id="market-name-popup">' + name + '</p>' +
+                '<p id="popup-text"> <span id= "market-details-popup"> Dates: </span> ' + start_date + "-" + end_date + '</p>' +
+                '<p id="popup-text"> <span id= "market-details-popup">Hours: </span> ' + open_time + "-" + close_time + '</p>' +
+                '<p id="popup-text"><span id= "market-details-popup"> Days Open:</span> ' + days + '</p>' +
+                '<p id="popup-text"><span id= "market-details-popup">Website: </span> ' + website + '</p>'
+            ;
+
+            var infowindow = new google.maps.InfoWindow ({
+                content : contentString
+            });
+            marker.infowindow = infowindow;
+            google.maps.event.addListener(marker,'mouseover',function() {
+                this.infowindow.open(map,this);
+
+
+            });
+            google.maps.event.addListener(marker,'mouseout',function() {
+                this.infowindow.close();
+            });
+            infowindows.push(infowindow);
+            /**var url_template =  "https://www.google.com/maps/dir/?api=1&origin="+userLocation.lat+","+
+             userLocation.lng +"&destination="+String(data[i].Latitude) +","+String(data[i].Longitude);
+             console.log("market:" , data[i]["Market Name"]);
+
+             marker.url = url_template;
+             market_URLs.push(url_template);
+
+             google.maps.event.addListener(marker, 'click', function () {
+                        window.open(this.url);
+                    });*/
+        }
+    }
 </script>
 <script>
     var data;
@@ -364,60 +419,8 @@
             skipEmptyLines: true,
             complete: function (results) {
                 data = results.data;
-                for (var i = 0; i < data.length; i++) {
-                    data[i].Latitude != 0 && data[i].Longitude != 0
-                    var location = {lat: data[i].Latitude, lng: data[i].Longitude}; //Gets location of each farmer's market
-                    var marker = new google.maps.Marker({
-                      position: location,
-                      map: map,
-                      icon: "img/icon-blue.png"}) //Creates a marker and places it on the map
-                    markers.push(marker);
-                    console.log(data[i]["Market Name"] + "has been added");
-                    //Stores marker in array
-
-                    //info for creating info-window for each marker
-                    var name = data[i]["Market Name"];
-                    var days = data[i]["Days of Week"];
-                    var open_time = data[i]["Open"];
-                    var close_time = data[i]["Close"];
-                    var start_date = data[i]["Start Date"];
-                    var end_date = data[i]["End Date"];
-                    var website = data[i]["Website"];
-                    //var url = generate_map_url(data[i]["Address"]);
-
-                    var contentString =  '<p id="market-name-popup">' + name + '</p>' +
-                        '<p id="popup-text"> <span id= "market-details-popup"> Dates: </span> ' + start_date + "-" + end_date + '</p>' +
-                        '<p id="popup-text"> <span id= "market-details-popup">Hours: </span> ' + open_time + "-" + close_time + '</p>' +
-                        '<p id="popup-text"><span id= "market-details-popup"> Days Open:</span> ' + days + '</p>' +
-                        '<p id="popup-text"><span id= "market-details-popup">Website: </span> ' + website + '</p>'
-                    ;
-
-                    var infowindow = new google.maps.InfoWindow ({
-                        content : contentString
-                    });
-                    marker.infowindow = infowindow;
-                    google.maps.event.addListener(marker,'mouseover',function() {
-                        this.infowindow.open(map,this);
-
-
-                    });
-                    google.maps.event.addListener(marker,'mouseout',function() {
-                        this.infowindow.close();
-                    });
-                    infowindows.push(infowindow);
-                    /**var url_template =  "https://www.google.com/maps/dir/?api=1&origin="+userLocation.lat+","+
-                        userLocation.lng +"&destination="+String(data[i].Latitude) +","+String(data[i].Longitude);
-                    console.log("market:" , data[i]["Market Name"]);
-
-                    marker.url = url_template;
-                    market_URLs.push(url_template);
-
-                    google.maps.event.addListener(marker, 'click', function () {
-                        window.open(this.url);
-                    });*/
-                }
+                createMarkers();
                 updateResults();
-
             }
 
         })
