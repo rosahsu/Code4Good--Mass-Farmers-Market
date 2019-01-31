@@ -40,6 +40,7 @@
                                 <a onclick=distanceFilter(userLocation,5)>5 miles</a>
                                 <a onclick=distanceFilter(userLocation,10)>10 miles</a>
                                 <a onclick=distanceFilter(userLocation,20)>20 miles</a>
+                                <a onclick=distanceFilter(userLocation,0)>∞ miles</a>
                             </div>
                         </div>
                     </div>
@@ -233,8 +234,6 @@
         resetMarkers();
         for (var i = 0; i < markers.length; i++){
             if(getDistance(location.lat, location.lng, data[i].Latitude, data[i].Longitude) > radius){
-                //console.log(data[i]["Market Name"] + "location is" + "[" + data[i].Latitude + ", " + data[i].Longitude + "]");
-                //console.log(getDistance(location.lat, location.lng, data[i].Latitude, data[i].Longitude))
                 markers[i].setMap(null);
             }
         }
@@ -247,7 +246,6 @@
                                 //buttonList passed into filterList
 
     function filterList(buttonList) {//filters based on buttons used
-        //console.log("FILTERLIST IS RUNNING...")
         for (var filter = 0; filter < buttonList.length; filter ++) {
             var current_filter = buttonList[filter];
             console.log("current filter" , current_filter);
@@ -273,7 +271,6 @@
 
     function filter(button){
         if (document.getElementById(button.id).checked == false){
-            console.log("resetting.....");
             filters_applied = arrayRemove(filters_applied,button.id); //remove from buttons used
 
 
@@ -283,8 +280,6 @@
                 }
 
             }
-
-            console.log(filters_applied);
             filterList(filters_applied); //re-apply based on new filter list
         } else {
             filters_applied.push(button.id); //add to list of filter buttons used
@@ -300,7 +295,6 @@
             panel.removeChild(children.item(i));
             i=i-1;
         }
-        console.log("Results cleared");
     }
 
     function updateResults(){
@@ -336,7 +330,6 @@
                 map: map,
                 icon: "img/icon-blue.png"}) //Creates a marker and places it on the map
             markers.push(marker);
-            console.log(data[i]["Market Name"] + "has been added");
             //Stores marker in array
 
             //info for creating info-window for each marker
@@ -389,7 +382,6 @@
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-                console.log(userLocation)
             });
         } else {
             console.log("No location available.");
@@ -412,7 +404,6 @@
 
     function initMap() {
         var csvFile = 'dataset.csv' //CSV  with farmer's market data
-        console.log(csvFile);
         var boston = {lat: 42.359884, lng: -71.058813}; //Location of Boston
         map = new google.maps.Map(
             document.getElementById('map'), {zoom: 8, center: boston}); //Creates map centered on Boston
