@@ -25,34 +25,6 @@
          market locations
         </span>
     </h1>
-    <div class="row align-items-left maprow">
-        <div class="col-md-9">
-            <div id="map"></div>
-        </div>
-        <div class="col-md-3">
-            <div class="panel panel-primary">
-              <div class="row align-items-center">
-                    <div class="col-md-12">
-                        <div class="dropdown">
-                            <button class="dropbtn">distance from me &nbsp; <i class="fas fa-caret-down"></i></button>
-                            <div class="dropdown-content">
-                                <a onclick=distanceFilter(userLocation,1)>1 mile</a>
-                                <a onclick=distanceFilter(userLocation,5)>5 miles</a>
-                                <a onclick=distanceFilter(userLocation,10)>10 miles</a>
-                                <a onclick=distanceFilter(userLocation,20)>20 miles</a>
-                                <a onclick=distanceFilter(userLocation,0)>∞ miles</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel-heading container-fluid"><h1 class="panel-title">Results</h1>
-                </div>
-                <div class="panel-body">
-                    <ul class="list-group" id="result_list" style="overflow: scroll;max-height: 571.33px"></ul>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="row">
       <div class="col-md-6">
@@ -93,7 +65,7 @@
   </div>
 
     <h2 class="filter-header">   What days of the week do you want to go? </h2>
-    <div class="row">
+    <div class="row bottomrow">
         <div class="col-md-1">
             <input type="checkbox" data-toggle="toggle" id="Monday" onchange=filter(this) data-on=" " data-off=" " data-style="ios"  >
             <label class="form-check-label" for="Monday">
@@ -146,34 +118,65 @@
     </div>
 
 
-<!-- Adding a new set of buttons instructions
 
-    STEP ONE: Copy the following code:
+    <!-- Adding a new set of buttons instructions
 
-    <h2 class="filter-header">   What products are you looking for? </h2> STEP TWO: Edit this header text to indicate what the filter does
+        STEP ONE: Copy the following code:
 
-    <div class="row">
-        <div class="col-md-1">
-             STEP THREE: edit the id (here it is "Bread") so that it matches exactly the column name in the dataset. Make sure to keep it in quotations.
-            <input type="checkbox" data-toggle="toggle" id="Bread" onchange=filter(this) data-on=" " data-off=" " data-style="ios"  >
-              STEP FOUR: edit the for (here it is "Bread") so that it matches exactly the column name in the dataset & the name you just put into id. Make sure to keep it in quotations
-            <label class="form-check-label" for="Bread">
-              STEP FIVE: edit the name of the button which will be displayed on the website. This can be whatever you want. Here it is Bread.
-                Bread
-            </label>
+        <h2 class="filter-header">   What products are you looking for? </h2> STEP TWO: Edit this header text to indicate what the filter does
+
+        <div class="row">
+            <div class="col-md-1">
+                 STEP THREE: edit the id (here it is "Bread") so that it matches exactly the column name in the dataset. Make sure to keep it in quotations.
+                <input type="checkbox" data-toggle="toggle" id="Bread" onchange=filter(this) data-on=" " data-off=" " data-style="ios"  >
+                  STEP FOUR: edit the for (here it is "Bread") so that it matches exactly the column name in the dataset & the name you just put into id. Make sure to keep it in quotations
+                <label class="form-check-label" for="Bread">
+                  STEP FIVE: edit the name of the button which will be displayed on the website. This can be whatever you want. Here it is Bread.
+                    Bread
+                </label>
+            </div>
+
+            STEP SIX: Repeat for as many buttons as you want
+
+            <div class="col-md-1">
+                <input type="checkbox" data-toggle="toggle" id="Dairy" onchange=filter(this) data-on=" " data-off=" " data-style="ios"  >
+                <label class="form-check-label" for="Dairy">
+                    Dairy
+                </label>
+            </div>
+          </div>
+
+        end of instructions -->
+
+    <div class="row align-items-left maprow">
+        <div class="col-md-9">
+            <div id="map"></div>
         </div>
-
-        STEP SIX: Repeat for as many buttons as you want
-
-        <div class="col-md-1">
-            <input type="checkbox" data-toggle="toggle" id="Dairy" onchange=filter(this) data-on=" " data-off=" " data-style="ios"  >
-            <label class="form-check-label" for="Dairy">
-                Dairy
-            </label>
+        <div class="col-md-3">
+            <div class="panel panel-primary">
+              <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="dropdown">
+                            <button class="dropbtn">distance from me &nbsp; <i class="fas fa-caret-down"></i></button>
+                            <div class="dropdown-content">
+                                <a onclick=distanceFilter(userLocation,1)>1 mile</a>
+                                <a onclick=distanceFilter(userLocation,5)>5 miles</a>
+                                <a onclick=distanceFilter(userLocation,10)>10 miles</a>
+                                <a onclick=distanceFilter(userLocation,20)>20 miles</a>
+                                <a onclick=distanceFilter(userLocation,0)>∞ miles</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-heading container-fluid"><h1 class="panel-title">Results</h1>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group" id="result_list" style="overflow: scroll;max-height: 571.33px"></ul>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
 
-    end of instructions -->
 
 </div>
 
