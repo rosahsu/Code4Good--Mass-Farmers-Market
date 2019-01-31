@@ -1,11 +1,18 @@
-.btn-secondary {
-margin-bottom: 10px;
-}
 
 
+/* BODY */
 body {
   font-family: 'Bitter', serif;
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* HEADERS */
 
 h1 {
   font-weight: 100;
@@ -38,112 +45,56 @@ h2 {
   margin-top: 3%;
 }
 
+/* ROWS */
+.bottomrow {
+    margin-bottom: 2%;
+  }
 
+
+
+
+
+
+/* MAP */
 #maprow {
     text-align: center;
+
 }
 
-
-    /* Always set the map height explicitly to define the size of the div
-     * element that contains the map. */
-    #map {
+#map {
         width: 100%;
         height: 600px;
         display: inline-block;
+        margin-bottom: 5%;
+        padding-bottom: 5%;
+}
 
-    }
-    /* Optional: Makes the sample page fill the window. */
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-/*
-    .toggle {
-  position: relative;
-  display: block;
-  width: 40px;
-  height: 20px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  transform: translate3d(0, 0, 0);
+/* MAP POP UPS */
+#market-name-popup {
+    font-family: 'Bitter', serif;
+    color: #0da4d3;
+      font-size: 20px;
+
 }
-.toggle:before {
-  content: "";
-  position: relative;
-  top: 3px;
-  left: 3px;
-  width: 34px;
-  height: 14px;
-  display: block;
-  background: #9A9999;
-  border-radius: 8px;
-  transition: background 0.2s ease;
+
+#market-details-popup {
+
+    color: #616161;
+    font-weight: bold;
+
 }
-.toggle span {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  display: block;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(154, 153, 153, 0.5);
-  transition: all 0.2s ease;
-}
-.toggle span:before {
-  content: "";
-  position: relative;
-  display: block;
-  margin: -18px;
-  width: 56px;
-  height: 56px;
-  background: rgba(79, 46, 220, 0.5);
-  border-radius: 50%;
-  transform: scale(0);
-  opacity: 1;
-  pointer-events: none;
+
+#pop-up-text {
+  font-size: 15px;
+  font-family: 'Bitter', serif;
+
 }
 
 
-.toggle_button:checked + .toggle:before {
-  background: #1abc9c;
+/* TOGGLE BUTTON STYLE */
+.btn-secondary {
+margin-bottom: 10px;
 }
-
-.toggle_button:checked + .toggle span {
-  background: #27ae60;
-  transform: translateX(20px);
-  transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
-  box-shadow: 0 3px 8px rgba(79, 46, 220, 0.2);
-}
-.toggle_button:checked + .toggle span:before {
-  transform: scale(1);
-  opacity: 0;
-  transition: all 0.4s ease;
-}
-
-.center {
-  position: absolute;
-  top: calc(50% - 10px);
-  left: calc(50% - 20px);
-}
-
-.snap_toggles  {
- margin-bottom: 5%;
-}
-
-.days_toggles  {
- margin-bottom: 5%;
- width: 10%;
-}
-
-#checkboxarea {
-  border-color: green;
-} */
-
-
-/* Toggle styles */
 
 .toggle.ios, .toggle-on.ios, .toggle-off.ios {
 
@@ -181,32 +132,15 @@ h2 {
 
 }
 
-  .row {
 
-  }
 
-  .bottomrow {
-    margin-bottom: 2%;
-  }
+/* RESULTS PANEL */
 
-  #market-name-popup {
-      font-family: 'Bitter', serif;
-      color: #0da4d3;
-        font-size: 20px;
-
-  }
-
-  #market-details-popup {
-
-      color: #616161;
-      font-weight: bold;
-
-  }
-
-#pop-up-text {
-    font-size: 15px;
-    font-family: 'Bitter', serif;
-
+.result-list-group{
+    max-height: 200px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 a {
@@ -228,3 +162,46 @@ text-decoration: none;
   margin-top: 4%;
   padding-top: 4%;
 }
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #0da4d3;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 2%;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #0c99c6;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #0c99c6;}
