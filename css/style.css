@@ -1,5 +1,14 @@
 
 
+/* COLOR SCHEME */
+
+:root {
+    --main-color: #0da4d3;
+    --main-color-dark: #0c99c6;
+    --secondary-color: #aaa;
+}
+
+
 /* BODY */
 body {
   font-family: 'Bitter', serif;
@@ -19,21 +28,21 @@ h1 {
   font-size: 35px;
   margin-top: 4%;
   margin-bottom: 4%;
-  color: #0da4d3;
+  color: var(--main-color);
 }
 
 h1 .divider {
 	margin: 0 8px;
-    color: #aaa;
+    color: var(--secondary-color);
 }
 
 h1 .sub-headline {
-	color: #aaa;
+	color: var(--secondary-color);
 	font-weight: 300;
 }
 
 h2 {
-  color: #aaa;
+  color: var(--secondary-color);
   font-weight: 100;
   font-size: 20px;
   margin-top: 50px;
@@ -49,10 +58,6 @@ h2 {
 .bottomrow {
     margin-bottom: 2%;
   }
-
-
-
-
 
 
 /* MAP */
@@ -72,7 +77,7 @@ h2 {
 /* MAP POP UPS */
 #market-name-popup {
     font-family: 'Bitter', serif;
-    color: #0da4d3;
+    color: var(--main-color);
       font-size: 20px;
 
 }
@@ -100,7 +105,7 @@ margin-bottom: 10px;
 
     border-color:#BDBDBD;
     margin-top: 1%;
-    background-color: #0da4d3;
+    background-color: var(--main-color);
 
   }
   .toggle.ios .toggle-handle {
@@ -110,7 +115,7 @@ margin-bottom: 10px;
    }
 
   .form-check-label {
-      color: #aaa;
+      color: var(--secondary-color);
   }
 
   .toggle-off {
@@ -119,7 +124,7 @@ margin-bottom: 10px;
 
   .toggle-on {
 
-      background-color: #0da4d3;
+      background-color: var(--main-color);
   }
 
 .btn:hover {
@@ -128,7 +133,7 @@ margin-bottom: 10px;
 
   .btn-primary:hover {
     color: #fff;
-    background-color: #0c99c6;
+    background-color: var(--main-color-dark);
 
 }
 
@@ -144,12 +149,12 @@ margin-bottom: 10px;
 }
 
 a {
-  color: #aaa;
+  color: var(--secondary-color);
   text-decoration: none;
 }
 
 a:hover {
-color: #0da4d3;
+color: var(--main-color);
 text-decoration: none;
 }
 
@@ -165,7 +170,7 @@ text-decoration: none;
 
 /* Dropdown Button */
 .dropbtn {
-    background-color: #0da4d3;
+    background-color: var(--main-color);
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -198,10 +203,10 @@ text-decoration: none;
 }
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #0c99c6;}
+  background-color: var(--main-color-dark);}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #0c99c6;}
+.dropdown:hover .dropbtn {background-color: var(--main-color-dark);}
