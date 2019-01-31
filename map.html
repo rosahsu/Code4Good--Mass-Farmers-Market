@@ -235,9 +235,11 @@
      */
     function distanceFilter(location, radius){
         resetMarkers();
-        for (var i = 0; i < markers.length; i++){
-            if(getDistance(location.lat, location.lng, data[i].Latitude, data[i].Longitude) > radius){
-                markers[i].setMap(null);
+        if(radius > 0) {
+            for (var i = 0; i < markers.length; i++){
+                if(getDistance(location.lat, location.lng, data[i].Latitude, data[i].Longitude) > radius){
+                    markers[i].setMap(null);
+                }
             }
         }
         updateResults();
