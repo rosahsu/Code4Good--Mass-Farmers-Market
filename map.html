@@ -309,7 +309,7 @@
         for(var i = 0; i < markers.length; i++){
             marker = markers[i];
             if(marker.map != null){
-              var website = 'https://' + data[i]["Website"];
+              var website = "http://" + data[i]["Website"];
                 result = document.createElement("a");
                 text = document.createTextNode(data[i]["Market Name"]);
                 result.href = website;
