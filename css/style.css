@@ -205,3 +205,13 @@ h2 {
     font-family: 'Bitter', serif;
 
 }
+
+a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+a:hover {
+color: #0da4d3;
+text-decoration: none;
+}
