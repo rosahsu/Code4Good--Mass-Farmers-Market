@@ -36,7 +36,6 @@
                         <div class="dropdown">
                             <button class="dropbtn">distance from me &nbsp; <i class="fas fa-caret-down"></i></button>
                             <div class="dropdown-content">
-                                <a onclick=clearResults()>Clear</a>
                                 <a onclick=distanceFilter(userLocation,1)>1 mile</a>
                                 <a onclick=distanceFilter(userLocation,5)>5 miles</a>
                                 <a onclick=distanceFilter(userLocation,10)>10 miles</a>
@@ -293,6 +292,7 @@
         }
         updateResults();
     }
+
     function clearResults(){
         panel = document.getElementById("result_list");
         children = panel.children;
@@ -301,21 +301,23 @@
             i=i-1;
         }
         console.log("Results cleared");
-
     }
+
     function updateResults(){
         clearResults();
         panel = document.getElementById("result_list");
         for(var i = 0; i < markers.length; i++){
             marker = markers[i];
             if(marker.map != null){
-                result = document.createElement("li");
+                result = document.createElement("a");
                 text = document.createTextNode(data[i]["Market Name"]);
+                result.href = data[i]["Website"]
                 result.appendChild(text);
                 panel.appendChild(result);
             }
         }
     }
+
     function resetMarkers(){
         for(var i = 0; i < markers.length; i++){
             markers[i].setMap(map)
