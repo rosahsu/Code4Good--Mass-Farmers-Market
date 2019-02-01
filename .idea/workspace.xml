@@ -33,11 +33,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="42" column="71" selection-start-line="42" selection-start-column="71" selection-end-line="42" selection-end-column="71" />
+            <state relative-caret-position="123">
+              <caret line="235" column="36" selection-start-line="235" selection-start-column="36" selection-end-line="235" selection-end-column="36" />
               <folding>
-                <element signature="e#1395#1401#0" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#7935#8661#0" />
+                <element signature="e#8740#8787#0" />
+                <element signature="e#8868#8915#0" />
+                <element signature="e#8922#9103#0" />
+                <element signature="e#11069#11295#0" />
+                <element signature="e#11325#11906#0" />
+                <element signature="e#12096#14610#0" />
               </folding>
             </state>
           </provider>
@@ -91,9 +97,9 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="246" />
-    <option name="y" value="-11" />
-    <option name="width" value="1451" />
-    <option name="height" value="1106" />
+    <option name="y" value="-12" />
+    <option name="width" value="1452" />
+    <option name="height" value="1107" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -185,6 +191,7 @@
       <workItem from="1548390205605" duration="1414000" />
       <workItem from="1548684861153" duration="5613000" />
       <workItem from="1548788662867" duration="3438000" />
+      <workItem from="1548998579141" duration="1337000" />
     </task>
     <task id="LOCAL-00001" summary="Created info windows for each marker. &#10;TO DO:&#10;- only make one open at a time&#10;- input more info like hours, days open, SNAP, SNAP MATCH, EBT">
       <created>1547870664982</created>
@@ -225,7 +232,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67379000" />
+    <option name="totallyTimeSpent" value="69588000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
@@ -450,11 +457,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/map.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="42" column="71" selection-start-line="42" selection-start-column="71" selection-end-line="42" selection-end-column="71" />
+        <state relative-caret-position="123">
+          <caret line="235" column="36" selection-start-line="235" selection-start-column="36" selection-end-line="235" selection-end-column="36" />
           <folding>
-            <element signature="e#1395#1401#0" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#7935#8661#0" />
+            <element signature="e#8740#8787#0" />
+            <element signature="e#8868#8915#0" />
+            <element signature="e#8922#9103#0" />
+            <element signature="e#11069#11295#0" />
+            <element signature="e#11325#11906#0" />
+            <element signature="e#12096#14610#0" />
           </folding>
         </state>
       </provider>

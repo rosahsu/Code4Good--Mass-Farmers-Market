@@ -25,42 +25,42 @@
     </h1>
 
     <div class="row">
-      <div class="col-md-6">
-    <h2  class="filter-header">   What services are you looking for? </h2>
-    <div class="row">
-        <div class="col-md-2">
-            <input type="checkbox" data-toggle="toggle" id="SNAPEBT" onchange=filter(this) data-on=" " data-off=" " data-style="ios" >
-            <label class="form-check-label" for="SNAPEBT">
-                SNAP
-            </label>
+        <div class="col-md-6">
+            <h2  class="filter-header">   What services are you looking for? </h2>
+            <div class="row">
+                <div class="col-md-2">
+                    <input type="checkbox" data-toggle="toggle" id="SNAPEBT" onchange=filter(this) data-on=" " data-off=" " data-style="ios" >
+                    <label class="form-check-label" for="SNAPEBT">
+                        SNAP
+                    </label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" data-toggle="toggle" id="HIP" onchange=filter(this) data-on=" " data-off=" " data-style="ios" >
+                    <label class="form-check-label" for="HIP">
+                        HIP
+                    </label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" data-toggle="toggle" id="SNAPMATCH" onchange=filter(this) data-on=" " data-off=" " data-style="ios" >
+                    <label class="form-check-label" for="SNAPMATCH">
+                        SNAP Match
+                    </label>
+                </div>
+            </div>
         </div>
-        <div class="col-md-2">
-            <input type="checkbox" data-toggle="toggle" id="HIP" onchange=filter(this) data-on=" " data-off=" " data-style="ios" >
-            <label class="form-check-label" for="HIP">
-                HIP
-            </label>
-        </div>
-        <div class="col-md-2">
-            <input type="checkbox" data-toggle="toggle" id="SNAPMATCH" onchange=filter(this) data-on=" " data-off=" " data-style="ios" >
-            <label class="form-check-label" for="SNAPMATCH">
-                SNAP Match
-            </label>
-        </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <h2  class="filter-header">   Are you looking for a winter market? </h2>
-  <div class="row">
-    <div class="col-md-2">
-        <input type="checkbox" data-toggle="toggle" id="Winter" onchange=filter(this) data-on=" " data-off=" " data-style="ios" >
-        <label class="form-check-label" for="Winter">
-            Winter Markets
-        </label>
-    </div>
-  </div>
+        <div class="col-md-6">
+            <h2  class="filter-header">   Are you looking for a winter market? </h2>
+            <div class="row">
+                <div class="col-md-2">
+                    <input type="checkbox" data-toggle="toggle" id="Winter" onchange=filter(this) data-on=" " data-off=" " data-style="ios" >
+                    <label class="form-check-label" for="Winter">
+                        Winter Markets
+                    </label>
+                </div>
+            </div>
 
-  </div>
-  </div>
+        </div>
+    </div>
 
     <h2 class="filter-header">   What days of the week do you want to go? </h2>
     <div class="row bottomrow">
@@ -152,16 +152,16 @@
         </div>
         <div class="col-md-3">
             <div class="panel panel-primary">
-              <div class="row align-items-center">
+                <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="dropdown">
                             <button class="dropbtn">distance from me &nbsp; <i class="fas fa-caret-down"></i></button>
                             <div class="dropdown-content">
-                                <a onclick=distanceFilter(userLocation,1)>1 mile</a>
-                                <a onclick=distanceFilter(userLocation,5)>5 miles</a>
-                                <a onclick=distanceFilter(userLocation,10)>10 miles</a>
-                                <a onclick=distanceFilter(userLocation,20)>20 miles</a>
-                                <a onclick=distanceFilter(userLocation,0)>∞ miles</a>
+                                <a onclick=distanceFilter(1)>1 mile</a>
+                                <a onclick=distanceFilter(5)>5 miles</a>
+                                <a onclick=distanceFilter(10)>10 miles</a>
+                                <a onclick=distanceFilter(20)>20 miles</a>
+                                <a onclick=distanceFilter(0)>∞ miles</a>
                             </div>
                         </div>
                     </div>
@@ -231,11 +231,12 @@
      * userLon: longitude of user
      * radius: radius of to filter (in mi)
      */
-    function distanceFilter(location, radius){
+    function distanceFilter(radius){
         resetMarkers();
+        filters_applied[0] = radius;
         if(radius > 0) {
             for (var i = 0; i < markers.length; i++){
-                if(getDistance(location.lat, location.lng, data[i].Latitude, data[i].Longitude) > radius){
+                if(!inRange(i, radius)){
                     markers[i].setMap(null);
                 }
             }
@@ -245,11 +246,19 @@
     /**
      * Filters out selected attributes
      */
+
+    function inRange(index, radius){
+
+        return getDistance(userLocation.lat, userLocation.lng, data[index].Latitude, data[index].Longitude) < radius
+
+    }
     var filters_applied = []; //keeping track of which filters have been applied
-                                //buttonList passed into filterList
+    filters_applied.push(0); //First index is of distance filter (-1 = no filter
+    //buttonList passed into filterList
 
     function filterList(buttonList) {//filters based on buttons used
-        for (var filter = 0; filter < buttonList.length; filter ++) {
+        distanceFilter(filters_applied[0]);
+        for (var filter = 1; filter < buttonList.length; filter ++) {
             var current_filter = buttonList[filter];
             console.log("current filter" , current_filter);
             for (var i = 0; i < data.length; i ++) {
@@ -278,7 +287,7 @@
 
 
             for (var i =0; i < data.length; i++) {
-                if (data[i][button.id] == 0) { //undo filter that was toggled
+                if (data[i][button.id] == 0 && inRange(i, filters_applied[0])) { //undo filter that was toggled
                     markers[i].setMap(map);
                 }
 
@@ -306,7 +315,7 @@
         for(var i = 0; i < markers.length; i++){
             marker = markers[i];
             if(marker.map != null){
-              var website = "http://" + data[i]["Website"];
+                var website = "http://" + data[i]["Website"];
                 result = document.createElement("a");
                 text = document.createTextNode(data[i]["Market Name"]);
                 result.href = website;
@@ -321,7 +330,7 @@
         for(var i = 0; i < markers.length; i++){
             markers[i].setMap(map)
         }
-        filters_applied = [];
+        //filters_applied = [];
     }
 
     function createMarkers(){
