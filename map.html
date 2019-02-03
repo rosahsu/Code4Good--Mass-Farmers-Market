@@ -157,11 +157,11 @@
                         <div class="dropdown">
                             <button class="dropbtn">distance from me &nbsp; <i class="fas fa-caret-down"></i></button>
                             <div class="dropdown-content">
-                                <a onclick=distanceFilter(1)>1 mile</a>
-                                <a onclick=distanceFilter(5)>5 miles</a>
-                                <a onclick=distanceFilter(10)>10 miles</a>
-                                <a onclick=distanceFilter(20)>20 miles</a>
-                                <a onclick=distanceFilter(0)>∞ miles</a>
+                                <a onclick=filter(1,true)>1 mile</a>
+                                <a onclick=filter(5,true)>5 miles</a>
+                                <a onclick=filter(10,true)>10 miles</a>
+                                <a onclick=filter(20,true)>20 miles</a>
+                                <a onclick=filter(0,true)>∞ miles</a>
                             </div>
                         </div>
                     </div>
@@ -281,21 +281,26 @@
 
     }
 
-    function filter(button){
-        if (document.getElementById(button.id).checked == false){
-            filters_applied = arrayRemove(filters_applied,button.id); //remove from buttons used
-
-
-            for (var i =0; i < data.length; i++) {
-                if (data[i][button.id] == 0 && inRange(i, filters_applied[0])) { //undo filter that was toggled
-                    markers[i].setMap(map);
-                }
-
-            }
-            filterList(filters_applied); //re-apply based on new filter list
-        } else {
-            filters_applied.push(button.id); //add to list of filter buttons used
+    function filter(button, isDistance=false) {
+        if (isDistance) {
+            filters_applied[0] = button;
             filterList(filters_applied);
+        } else {
+            if (document.getElementById(button.id).checked == false) {
+                filters_applied = arrayRemove(filters_applied, button.id); //remove from buttons used
+
+
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i][button.id] == 0 && inRange(i, filters_applied[0])) { //undo filter that was toggled
+                        markers[i].setMap(map);
+                    }
+
+                }
+                filterList(filters_applied); //re-apply based on new filter list
+            } else {
+                filters_applied.push(button.id); //add to list of filter buttons used
+                filterList(filters_applied);
+            }
         }
         updateResults();
     }

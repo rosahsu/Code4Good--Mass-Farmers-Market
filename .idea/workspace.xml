@@ -33,17 +33,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="235" column="36" selection-start-line="235" selection-start-column="36" selection-end-line="235" selection-end-column="36" />
+            <state relative-caret-position="153">
+              <caret line="283" column="40" selection-start-line="283" selection-start-column="40" selection-end-line="283" selection-end-column="40" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#7935#8661#0" />
-                <element signature="e#8740#8787#0" />
-                <element signature="e#8868#8915#0" />
-                <element signature="e#8922#9103#0" />
-                <element signature="e#11069#11295#0" />
-                <element signature="e#11325#11906#0" />
-                <element signature="e#12096#14610#0" />
               </folding>
             </state>
           </provider>
@@ -191,7 +184,9 @@
       <workItem from="1548390205605" duration="1414000" />
       <workItem from="1548684861153" duration="5613000" />
       <workItem from="1548788662867" duration="3438000" />
-      <workItem from="1548998579141" duration="1337000" />
+      <workItem from="1548998579141" duration="1573000" />
+      <workItem from="1549135730082" duration="652000" />
+      <workItem from="1549219562967" duration="561000" />
     </task>
     <task id="LOCAL-00001" summary="Created info windows for each marker. &#10;TO DO:&#10;- only make one open at a time&#10;- input more info like hours, days open, SNAP, SNAP MATCH, EBT">
       <created>1547870664982</created>
@@ -232,7 +227,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69588000" />
+    <option name="totallyTimeSpent" value="71037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
@@ -403,20 +398,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/leaflet.css" />
-    <entry file="file://$PROJECT_DIR$/css/dropdownbtn.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/resultspanel.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/css/dropdownbtn.css" />
+    <entry file="file://$PROJECT_DIR$/css/resultspanel.css" />
     <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -457,17 +440,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/map.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="235" column="36" selection-start-line="235" selection-start-column="36" selection-end-line="235" selection-end-column="36" />
+        <state relative-caret-position="153">
+          <caret line="283" column="40" selection-start-line="283" selection-start-column="40" selection-end-line="283" selection-end-column="40" />
           <folding>
             <element signature="n#style#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#7935#8661#0" />
-            <element signature="e#8740#8787#0" />
-            <element signature="e#8868#8915#0" />
-            <element signature="e#8922#9103#0" />
-            <element signature="e#11069#11295#0" />
-            <element signature="e#11325#11906#0" />
-            <element signature="e#12096#14610#0" />
           </folding>
         </state>
       </provider>
