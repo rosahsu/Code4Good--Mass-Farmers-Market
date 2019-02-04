@@ -7,7 +7,7 @@ This project was created in affiliation with MIT Code4Good, an organization that
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
-A Google API Key (if you don't have one already, here are instructions: https://developers.google.com/maps/documentation/javascript/get-api-key
+A Google API Key (if you don't have one already, here are instructions: https://developers.google.com/maps/documentation/javascript/get-api-key, Make sure the Maps Javascript API is enabled)
 Python IDE (for editing)
 ### Set-up/Usage
 
