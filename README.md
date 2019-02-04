@@ -62,7 +62,7 @@ Python IDE (for editing)
  4. You can also change the font by modifying the --main-font variable. 
  5. This is a useful website for picking color schemes and hex codes: https://flatuicolors.com/.
  
-###Changing the marker icon
+### Changing the marker icon
  1. Choose your new icon and copy it into the folder ‘img’. Make sure the icon size is the size you would like it to appear on the map.
  2. Open the file map.html. 
  3. In lines 341 to 349 you will see the following code:
