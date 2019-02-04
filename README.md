@@ -41,12 +41,13 @@ Python IDE (for editing)
   </div>    	
   </div>
  ```
+
  3. Modify the header. Here it says ‘What products are you looking for?’
  4. Modify the button ‘id’. Here it is “Bread”. Change it to exactly match the name of the column in the dataset. 
  5. Modify the button ‘for’. This should also match exactly the name of the column in the dataset.
  6. Modify the button label. This will be what appears on the web site.
-
-###Changing Color Scheme
+ 
+ ### Changing Color Scheme
  1. Open the file ‘style.css’ in the folder ‘style’
  2. Modify the following code at the top of the screen: 
 ```
