@@ -6,12 +6,13 @@
     --main-color: #0da4d3;
     --main-color-dark: #0c99c6;
     --secondary-color: #aaa;
+    --main-font: 'Bitter', serif;
 }
 
 
 /* BODY */
 body {
-  font-family: 'Bitter', serif;
+  font-family: var(--main-font);
 }
 
 html, body {
@@ -76,7 +77,7 @@ h2 {
 
 /* MAP POP UPS */
 #market-name-popup {
-    font-family: 'Bitter', serif;
+    font-family: var(--main-font);
     color: var(--main-color);
       font-size: 20px;
 
@@ -91,7 +92,7 @@ h2 {
 
 #pop-up-text {
   font-size: 15px;
-  font-family: 'Bitter', serif;
+  font-family: var(--main-font);
 
 }
 
