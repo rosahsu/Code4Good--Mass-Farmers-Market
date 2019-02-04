@@ -43,7 +43,7 @@ Python IDE (for editing)
 
 ### Adding Buttons
  1. Open the file map.html
- 2. t line 120, you will see a placeholder for adding new buttons. Copy the following code and follow the steps for modification (also included below).
+ 2. At line 120, you will see a placeholder for adding new buttons. Copy the following code and follow the steps for modification (also included below).
 
 ```
 <!-- Adding a new set of buttons instructions
