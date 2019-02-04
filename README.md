@@ -2,90 +2,82 @@
 
 This project was created in affiliation with MIT Code4Good, an organization that pairs MIT students with local nonprofits that require their technological skills. Our nonprofit, Mass Farmers Markets, partners with farmers, consumers, and communities to improve the health of individuals, strengthen community vitality, and enhance local farm viability through farmers markets. They required both consulting advice on how to revamp their database and an interactive presentable map that helps consumers search for farmers markets in their area. This GitHub repository contains all the relevant code regarding the interactive map, including instructions on how to update it.
 
-For relevant people - Google API Key: AIzaSyDlg_RXppjqCe1dTW8XW2xBYgmq84-O-xQ
-
-Also, please only do pull requests on the changes branch, then we can commit them to master. It'll help keep the work progress clear and prevent code conflicts.
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
+A Google API Key (if you don't have one already, here are instructions: https://developers.google.com/maps/documentation/javascript/get-api-key
+Python IDE (for editing)
+### Set-up/Usage
 
-What things you need to install the software and how to install them
+1. Download all the files from the GitHub/clone the repository to a local directory. See https://help.github.com/articles/cloning-a-repository/ for help.
 
+2. Open map.html
+
+3. Copy paste your API Key into Google callback script
+  ```
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+  </script>
+  ```
+ 4. To see the pretty map on display, run map.html 
+
+### Adding Buttons
+ 1. Open the file map.html
+ 2. In lines 120 to 147, you will see instructions on how to add a button.
 ```
-Give examples
+  <h2 class="filter-header">   What products are you looking for? </h2> 
+  <div class="row">
+        	
+  <div class="col-md-1">
+    <input type="checkbox" data-toggle="toggle" id="Bread" onchange=filter(this) data-on=" " data-off=" " data-style="ios">
+    <label class="form-check-label" for="Bread">Bread</label>
+  </div>
+
+  <div class="col-md-1">
+    <input type="checkbox" data-toggle="toggle" id="Dairy" onchange=filter(this) data-on=" " data-off=" " data-style="ios"  >
+    <label class="form-check-label" for="Dairy">Dairy</label>
+  </div>    	
+  </div>
+ ```
+ 3. Modify the header. Here it says ‘What products are you looking for?’
+ 4. Modify the button ‘id’. Here it is “Bread”. Change it to exactly match the name of the column in the dataset. 
+ 5. Modify the button ‘for’. This should also match exactly the name of the column in the dataset.
+ 6. Modify the button label. This will be what appears on the web site.
+
+###Changing Color Scheme
+ 1. Open the file ‘style.css’ in the folder ‘style’
+ 2. Modify the following code at the top of the screen: 
 ```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+  :root {
+    --main-color: #0da4d3;
+	  --main-color-dark: #0c99c6;
+	  --secondary-color: #aaa;
+	  --main-font: 'Bitter', serif;
+  }
 ```
-Give the example
+ 3. The colors are represented by hex codes (for example, #0da4d3 is this shade of blue). You can change the hex codes to match whatever color scheme you choose. For example, if you want a purple color scheme, you can change --main-color: #0da4d3 to be --main-color: #8e44ad.
+ 4. You can also change the font by modifying the --main-font variable. 
+ 5. This is a useful website for picking color schemes and hex codes: https://flatuicolors.com/.
+ 
+###Changing the marker icon
+ 1. Choose your new icon and copy it into the folder ‘img’. Make sure the icon size is the size you would like it to appear on the map.
+ 2. Open the file map.html. 
+ 3. In lines 341 to 349 you will see the following code:
 ```
-
-And repeat
-
+function createMarkers(){
+    	for (var i = 0; i < data.length; i++) {
+        	data[i].Latitude != 0 && data[i].Longitude != 0
+        	var location = {lat: data[i].Latitude, lng: data[i].Longitude}; //Gets location of each farmer's market
+        	var marker = new google.maps.Marker({
+            	position: location,
+            	map: map,
+            	icon: "img/icon-blue.png"}) //Creates a marker and places it on the map
+        	markers.push(marker);
 ```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+4. Change the ‘img/icon-blue.png’ to whatever the name of your new icon is. For example, ‘img/new-icon.png’. 
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
