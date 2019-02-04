@@ -33,7 +33,7 @@ Python IDE (for editing)
 
 4. Make sure to save the file with the exact same name (dataset.csv), as this is the name the code will look for.
 
-###Adding New Farmers Markets
+### Adding New Farmers Markets
 1. Open dataset.csv.
 
 2. Add a new line at the bottom with the name of the farmer’s market and fill out the corresponding columns.
